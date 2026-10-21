@@ -377,3 +377,16 @@ code { font-family: var(--mono); font-size: .86em; background: var(--code-bg); p
 .ornament[data-season="summer"] .fill { fill: #e8b83044; }
 .ornament[data-season="autumn"] .fill { fill: #c2652a40; }
 @keyframes ornament-swing { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }
+a.ornament { text-decoration: none; }
+a.ornament[href] { cursor: pointer; }
+a.ornament[href]:hover { color: var(--accent); }
+.ornament[data-season="science"] .fill { fill: #5d8ad833; }
+.ornament[data-season="health"] .fill, .ornament[data-season="teachers"] .fill { fill: #c2462a33; }
+.ornament[data-season="book"] .fill { fill: #d9a44133; }
+.ornament[data-season="bee"] .fill { fill: #e8b83055; }
+/* Flags in their real colours, in both themes. */
+.ornament[data-season="swiss"] .fill { fill: #d52b1e; }
+.ornament[data-season="austria"] .fill { fill: #c8102e; }
+.ornament .white { fill: #fff; }
+.ornament[data-season="mentalhealth"] { color: #3f8f5a; }
+.ornament[data-season="radiology"] .fill { fill: #1f3f7a26; }
