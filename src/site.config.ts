@@ -41,11 +41,12 @@ export const site = {
   ],
 
   // Transparency note in the footer (adapted from sunelehmann.com). HTML allowed.
-  aiDeclaration: `<b>AI declaration:</b> The posts are written by me, by hand; AI may proofread, but it
-    doesn't write. The site itself was built with AI (Claude Code), and the portraits are AI-generated
-    from a photo of me. Kudos to <a href="https://sunelehmann.com">Sune Lehmann</a> for the idea of
-    AI portraits in different costumes (press ↻ next to my photo) and for this declaration. The moving line drawings are from
-    <a href="https://hairline.lucasmarkes.com">hairline</a>.`,
+  aiDeclaration: `<b>AI declaration:</b> Every blog post is <mark class="hl">typed by hand by an actual human</mark>:
+    ten fingers, too much coffee, and the occasional typo as a certificate of authenticity. AI may proofread,
+    but it doesn't get the keyboard. The site itself was built with AI (Claude Code), and the portraits are
+    AI-generated from a photo of me. Kudos to <a href="https://sunelehmann.com">Sune Lehmann</a> for the idea
+    of AI portraits in different costumes (press ↻ next to my photo) and for this declaration. The moving
+    line drawings are from <a href="https://hairline.lucasmarkes.com">hairline</a>.`,
 
   // Shown first on the Research page, in this order. DOIs from your ORCID list.
   selectedPublications: [

@@ -115,6 +115,17 @@ const canonical = new URL(path, Astro.site);
         })();
       </script>
     )}
+    <script is:inline>
+      // Sweep the highlighter across "typed by hand" when the footer comes into view.
+      (() => {
+        const hl = document.querySelector(".ai-declaration .hl");
+        if (!hl) return;
+        const io = new IntersectionObserver((es) => {
+          if (es.some((e) => e.isIntersecting)) { hl.classList.add("drawn"); io.disconnect(); }
+        }, { threshold: 0.5 });
+        io.observe(hl);
+      })();
+    </script>
     <script>
       import "../scripts/hairline";
       import "../scripts/confetti";

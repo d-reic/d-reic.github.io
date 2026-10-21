@@ -394,3 +394,14 @@ a.ornament[href]:hover { color: var(--accent); }
 .ornament[data-season="coffee"] .fill { fill: #8b5a3a40; }
 /* On the home page the name is the h1; it keeps the header's look. */
 .brand-h1 { margin: 0; font: inherit; min-width: 0; display: flex; }
+
+/* "Typed by hand" in the footer: a highlighter stroke that sweeps in once the
+   footer is in view (Sune's site marks the same sentence). */
+.ai-declaration .hl {
+  color: #1d1c1a; padding: .05em .3em; margin: 0 -.1em; border-radius: .6em .25em .7em .3em;
+  background: linear-gradient(100deg, #f6d55ccc 0%, #f6d55c 6%, #f4cf4abf 50%, #f6d55c 94%, #f6d55ca6 100%) no-repeat 0 60% / 0% 82%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  transition: background-size 1.1s cubic-bezier(.6,.1,.3,1) .2s;
+}
+.ai-declaration .hl.drawn { background-size: 100% 82%; }
+@media (prefers-reduced-motion: reduce) { .ai-declaration .hl { background-size: 100% 82%; } }
