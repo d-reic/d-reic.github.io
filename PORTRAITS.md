@@ -12,10 +12,10 @@ The rotating portrait on the home and About pages is an idea borrowed from
 3. If a result drifts (different face, wrong crop), reply with
    *"Same person as the reference photo, keep the face exactly. Same framing as before."*
 4. Download each result and name it after its file below (e.g. `viking.png`).
-5. Put them all in one folder and run:
+5. Put them all in `portraits-src/` in this project (it is git-ignored) and run:
 
    ```bash
-   npm run portraits ~/Downloads/portraits
+   npm run portraits
    ```
 
    That crops each image to 4:5, resizes it to 800×1000 and saves it to `public/portraits/`.
