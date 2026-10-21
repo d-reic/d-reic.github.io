@@ -78,7 +78,7 @@ export const site = {
 // exists in /public are shown; prompts for each one are in PORTRAITS.md, and
 // `npm run portraits <folder>` crops and resizes them into /public/portraits.
 export const portraits: { src: string; caption: string }[] = [
-  { src: "/portraits/original.jpg", caption: "the original, more or less" },
+  { src: "/portraits/original.jpg", caption: "the original" },
   { src: "/portraits/radiologist.jpg", caption: "reading an X-ray" },
   { src: "/portraits/athlete.jpg", caption: "mid-WOD" },
   { src: "/portraits/harpist.jpg", caption: "as a concert harpist" },

@@ -24,22 +24,22 @@ const first = portraits[0];
 </figure>
 
 <script is:inline define:vars={{ name: site.shortName }}>
-  // A different costume on every visit; the button cycles through the rest
-  // in a shuffled order so you never see the same one twice in a row.
+  // The first portrait (the standard one) always shows on load, as rendered by
+  // the server; the button then cycles through the rest in a shuffled order.
   document.querySelectorAll(".portrait-fig[data-portraits]").forEach((fig) => {
     if (fig.dataset.ready) return;
     fig.dataset.ready = "1";
     const list = JSON.parse(fig.dataset.portraits);
     const img = fig.querySelector("img");
     const cap = fig.querySelector("[data-caption]");
-    const order = list.map((_, i) => i).sort(() => Math.random() - 0.5);
+    const rest = list.map((_, i) => i).slice(1).sort(() => Math.random() - 0.5);
+    const order = [0, ...rest];
     let i = 0;
     const show = (p) => {
       img.src = p.src;
       img.alt = "AI-generated portrait of " + name + " " + p.caption;
       cap.textContent = name + ", " + p.caption;
     };
-    show(list[order[0]]);
     list.forEach((p) => { new Image().src = p.src; });
     fig.querySelector(".shuffle")?.addEventListener("click", () => {
       i = (i + 1) % order.length;
