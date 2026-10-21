@@ -1,0 +1,47 @@
+---
+import Base from "../layouts/Base.astro";
+import HairlineFigure from "../components/HairlineFigure.astro";
+import { site } from "../site.config";
+
+const { teaching } = site;
+---
+<Base title="Teaching" description="Modules and degree programmes I teach at Bern University of Applied Sciences.">
+  <section class="page-head">
+    <div class="reveal">
+      <div class="eyebrow">Bern University of Applied Sciences</div>
+      <h1>Teaching</h1>
+      <p>I teach clinical apps, quality management and the practical use of generative AI, mostly in the BSc Medical Informatics in Biel. Current details are on my <a href={teaching.profile}>BFH profile</a>.</p>
+    </div>
+    <HairlineFigure name="loupe" n={1} play class="reveal reveal-2" label="A stand loupe on a ruled sheet; the rules pass enlarged under the glass" />
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Modules</h2><span class="line"></span></div>
+    <ul class="timeline">
+      {teaching.modules.map((m) => (
+        <li>
+          <span class="mono">{m.role}</span>
+          <div>
+            <div class="w">{m.name}</div>
+            {m.note && <div class="note">{m.note}</div>}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Programmes</h2><span class="line"></span></div>
+    <ul class="timeline">
+      {teaching.programmes.map((p) => (
+        <li>
+          <span class="mono">Programme</span>
+          <div>
+            <div class="w">{p.name}</div>
+            <div class="note">{p.where}</div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

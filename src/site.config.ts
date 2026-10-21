@@ -41,8 +41,8 @@ export const site = {
   // Transparency note in the footer (adapted from sunelehmann.com). HTML allowed.
   aiDeclaration: `<b>AI declaration:</b> The posts are written by me, by hand; AI may proofread, but it
     doesn't write. The site itself was built with AI (Claude Code), and the portraits are AI-generated
-    from a photo of me. Kudos to <a href="https://sunelehmann.com">Sune Lehmann</a> for the idea of a
-    different me on every visit (and for this declaration). The moving line drawings are from
+    from a photo of me. Kudos to <a href="https://sunelehmann.com">Sune Lehmann</a> for the idea of
+    AI portraits in different costumes (press ↻ next to my photo) and for this declaration. The moving line drawings are from
     <a href="https://hairline.lucasmarkes.com">hairline</a>.`,
 
   // Shown first on the Research page, in this order. DOIs from your ORCID list.
@@ -59,6 +59,7 @@ export const site = {
 
   nav: [
     { label: "Research", href: "/research/" },
+    { label: "Teaching", href: "/teaching/" },
     { label: "Blog", href: "/blog/" },
     { label: "About", href: "/about/" },
   ],
@@ -73,7 +74,7 @@ export const site = {
   ],
   education: [
     { when: "2023 — 2026", what: "PhD in Life Sciences", where: "Université de Genève", note: "Natural language processing in radiology. Nearly done." },
-    { when: "2020 —", what: "MSc Information Management", where: "FH JOANNEUM, Austria", note: "Specialisation in software and digital experience engineering." },
+    { when: "2020 — 2022", what: "MSc Information Management", where: "FH JOANNEUM, Austria", note: "Specialisation in software and digital experience engineering." },
     { when: "2021 — 2022", what: "Exchange semester", where: "Jönköping University, Sweden", note: "Mobile development, iOS, semantic web technologies." },
     { when: "2017 — 2020", what: "BSc Medical Informatics", where: "FH JOANNEUM, Austria", note: "Specialisation in digital personal assistance systems." },
     { when: "2019 — 2020", what: "Exchange semester", where: "Bern University of Applied Sciences", note: "Usability testing, augmented reality, medical data integration." },
@@ -83,12 +84,29 @@ export const site = {
     { name: "Der Harfenist", note: "Harp music for your event.", links: [{ label: "Website", href: "https://der-harfenist.ch" }] },
     { name: "Facilitation & Digital Experience Engineering", note: "About to start my own company. Stay tuned!", links: [] },
   ],
+  // Teaching page. From the BFH profile: bfh.ch/en/daniel-reichenpfader
+  teaching: {
+    profile: "https://www.bfh.ch/en/about-bfh/people/dsgj475q4xyr/",
+    programmes: [
+      { name: "BSc Medical Informatics", where: "BFH School of Engineering and Computer Science" },
+      { name: "BFH-Diagonal", where: "Interdisciplinary electives open to all BFH students" },
+      { name: "Digitalization and transformation in healthcare", where: "BFH School of Health Professions" },
+    ],
+    modules: [
+      { name: "Clinical apps", role: "Module lead", note: "" },
+      { name: "Quality management in healthcare", role: "Module lead", note: "" },
+      { name: "Optimize your studies with genAI", role: "Module lead", note: "BFH-Diagonal elective. Selected as a “Good Practice Example Future Skills”." },
+      { name: "Living Case II", role: "Semester projects", note: "" },
+      { name: "User-Centered Design", role: "Selected units", note: "" },
+      { name: "Clinical studies", role: "Selected units", note: "" },
+    ],
+  },
   interests: ["Large language models in medicine", "Clinical NLP", "Data science", "Mobile app development"],
   skills: ["LLMs", "Python", "Swift", "Firebase", "Docker", "Linux", "LaTeX"],
 };
 
-// The rotating AI portraits (idea: sunelehmann.com). One is picked at random on
-// every visit and the ↻ button cycles through the rest. Only entries whose file
+// The rotating AI portraits (idea: sunelehmann.com). The first one always shows
+// on load and the ↻ button cycles through the rest in a shuffled order. Only entries whose file
 // exists in /public are shown; prompts for each one are in PORTRAITS.md, and
 // `npm run portraits <folder>` crops and resizes them into /public/portraits.
 export const portraits: { src: string; caption: string }[] = [

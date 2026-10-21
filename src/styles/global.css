@@ -121,10 +121,13 @@ code { font-family: var(--mono); font-size: .86em; background: var(--code-bg); p
 .theme-toggle button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 .theme-toggle svg { width: 13px; height: 13px; }
 
-@media (max-width: 560px) {
-  .site-header .bar { gap: 12px; min-height: 60px; }
-  .brand em { display: none; }
-  .nav { gap: 14px; }
+@media (max-width: 900px) { .brand em { display: none; } }
+/* Phones: name on its own line, the menu on a second row underneath. */
+@media (max-width: 600px) {
+  .site-header .bar { flex-wrap: wrap; gap: 6px 12px; min-height: 0; padding: 12px 0 10px; }
+  .brand { flex: 1 0 100%; }
+  .nav { margin-left: 0; width: 100%; gap: 16px; }
+  .nav .theme-toggle { margin-left: auto; }
 }
 
 /* ---------- Footer ---------- */
@@ -358,3 +361,19 @@ code { font-family: var(--mono); font-size: .86em; background: var(--code-bg); p
 @keyframes egg-in { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
 .egg-hint { opacity: .25; letter-spacing: .08em; cursor: help; transition: opacity .3s; }
 .egg-hint:hover { opacity: 1; color: var(--accent); }
+
+/* ---------- Seasonal ornament (hangs from the header ruler) ---------- */
+.ornament-anchor { position: relative; height: 0; }
+.ornament { position: absolute; top: 0; right: calc(var(--gutter) + 64px); z-index: 5; display: flex; flex-direction: column; align-items: center;
+  color: var(--ink-soft); transform-origin: top center; animation: ornament-swing 5s ease-in-out infinite; cursor: default; }
+.ornament[hidden] { display: none; }
+.ornament .thread { width: 1px; height: 14px; background: var(--rule-strong); }
+.ornament svg { width: 26px; height: 26px; margin-top: -1px; }
+.ornament .fill { fill: var(--accent-soft); }
+.ornament[data-season="christmas"] .fill { fill: #c2462a33; }
+.ornament[data-season="easter"] .fill { fill: #d9a44133; }
+.ornament[data-season="halloween"] .fill { fill: #e8892b44; }
+.ornament[data-season="spring"] .fill { fill: #e79ab844; }
+.ornament[data-season="summer"] .fill { fill: #e8b83044; }
+.ornament[data-season="autumn"] .fill { fill: #c2652a40; }
+@keyframes ornament-swing { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(5deg); } }

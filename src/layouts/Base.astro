@@ -10,6 +10,7 @@ import "@fontsource/geist-mono/latin-500.css";
 import "../styles/global.css";
 import { site } from "../site.config";
 import ThemeToggle from "../components/ThemeToggle.astro";
+import SeasonalOrnament from "../components/SeasonalOrnament.astro";
 
 interface Props { title?: string; description?: string; progress?: boolean; image?: string }
 const { title, description = site.description, progress = false, image } = Astro.props;
@@ -60,6 +61,8 @@ const canonical = new URL(path, Astro.site);
         <div class="ruler" aria-hidden="true">{progress && <div class="progress"></div>}</div>
       </div>
     </header>
+
+    <SeasonalOrnament />
 
     <main class="wrap">
       <slot />
