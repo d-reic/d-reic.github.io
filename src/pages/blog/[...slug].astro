@@ -3,6 +3,7 @@ import { render } from "astro:content";
 import Base from "../../layouts/Base.astro";
 import HairlineFigure from "../../components/HairlineFigure.astro";
 import { getPosts, fmtDate, readingTime, type Post } from "../../lib/posts";
+import { blogPosting } from "../../lib/schema";
 
 export async function getStaticPaths() {
   const posts = await getPosts();
@@ -16,8 +17,15 @@ interface Props { post: Post; newer?: Post; older?: Post }
 const { post, newer, older } = Astro.props;
 const { Content } = await render(post);
 const d = post.data;
+const ogImage = d.cover ?? `/og/blog/${post.id}.png`;
 ---
-<Base title={d.title} description={d.description} image={d.cover ?? `/og/blog/${post.id}.png`} progress>
+<Base
+  title={d.title}
+  description={d.description}
+  image={ogImage}
+  progress
+  jsonLd={blogPosting({ title: d.title, description: d.description, date: d.date, updated: d.updated, url: new URL(`/blog/${post.id}/`, Astro.site).href, image: new URL(ogImage, Astro.site).href })}
+>
   <article>
     <header class="post-head measure">
       <div class="post-meta">

@@ -3,8 +3,9 @@ import Base from "../layouts/Base.astro";
 import Portrait from "../components/Portrait.astro";
 import HairlineFigure from "../components/HairlineFigure.astro";
 import { site } from "../site.config";
+import { profilePage } from "../lib/schema";
 ---
-<Base title="About">
+<Base title="About" description="About Daniel Reichenpfader: experience, education and projects, from medical informatics in Graz to clinical NLP research and teaching at BFH in Biel." jsonLd={profilePage}>
   <div class="about-grid">
     <aside class="about-side">
       <Portrait n={1} />

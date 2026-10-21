@@ -5,16 +5,18 @@ export const site = {
   shortName: "Daniel",
   // The italic half of the header, like Sune's "Intermittent Updates".
   tagline: "Working Notes",
+  // Search results: the home page title and the default description.
+  seoTitle: "Daniel Reichenpfader · Clinical NLP & AI in Healthcare",
   description:
-    "Daniel Reichenpfader: researcher, app developer and project manager working on eHealth, NLP and AI.",
-  role: "Tenure-track Professor · Bern University of Applied Sciences",
+    "Daniel Reichenpfader is a tenure-track lecturer at Bern University of Applied Sciences (BFH), researching clinical NLP and large language models in healthcare.",
+  role: "Tenure-track Lecturer · Bern University of Applied Sciences",
   location: "Switzerland",
 
   // Home page intro. Plain HTML is allowed.
   bio: [
     `Hej! Salü! Servus! I'm Daniel, a researcher, app developer and project manager with a focus on
      eHealth and well-being.`,
-    `I'm a tenure-track professor at <a href="https://www.bfh.ch">Bern University of Applied Sciences</a>
+    `I'm a tenure-track lecturer at <a href="https://www.bfh.ch">Bern University of Applied Sciences</a>
      and about to finish my PhD at the Université de Genève on natural language processing in
      radiology. More broadly, I'm trying to make healthcare more accessible and efficient with AI and NLP.`,
   ],
@@ -23,7 +25,7 @@ export const site = {
   now: {
     updated: "2026-10-21",
     items: [
-      "Settling into a tenure-track professorship at BFH.",
+      "Settling into my new role as tenure-track lecturer at BFH.",
       "Wrapping up my PhD on natural language processing in radiology.",
       "Building <a href=\"https://amrap-app.com\">AMRAP</a>, an iOS app for box fitness athletes.",
     ],
@@ -66,7 +68,7 @@ export const site = {
 
   // About page: karpathy.ai-style timelines. Newest first.
   experience: [
-    { when: "2026 — now", what: "Tenure-track Professor", where: "Bern University of Applied Sciences", note: "" },
+    { when: "2026 — now", what: "Tenure-track Lecturer", where: "Bern University of Applied Sciences", note: "" },
     { when: "2025", what: "HORIZON Europe Expert", where: "European Commission", note: "Evaluating project proposals for the HORIZON Europe programme." },
     { when: "2022 — 2026", what: "Research Associate", where: "Bern University of Applied Sciences", note: "Research projects on clinical NLP, conversational agents and AI-based tools for higher education." },
     { when: "2020 — 2022", what: "R&D Assistant", where: "Solgenium", note: "Android development, stakeholder analyses and research proposals." },

@@ -125,7 +125,7 @@ code { font-family: var(--mono); font-size: .86em; background: var(--code-bg); p
 /* Phones: name on its own line, the menu on a second row underneath. */
 @media (max-width: 600px) {
   .site-header .bar { flex-wrap: wrap; gap: 6px 12px; min-height: 0; padding: 12px 0 10px; }
-  .brand { flex: 1 0 100%; }
+  .brand, .brand-h1 { flex: 1 0 100%; }
   .nav { margin-left: 0; width: 100%; gap: 16px; }
   .nav .theme-toggle { margin-left: auto; }
 }
@@ -390,3 +390,7 @@ a.ornament[href]:hover { color: var(--accent); }
 .ornament .white { fill: #fff; }
 .ornament[data-season="mentalhealth"] { color: #3f8f5a; }
 .ornament[data-season="radiology"] .fill { fill: #1f3f7a26; }
+.ornament[data-season="cat"] .fill { fill: #d9a44144; }
+.ornament[data-season="coffee"] .fill { fill: #8b5a3a40; }
+/* On the home page the name is the h1; it keeps the header's look. */
+.brand-h1 { margin: 0; font: inherit; min-width: 0; display: flex; }

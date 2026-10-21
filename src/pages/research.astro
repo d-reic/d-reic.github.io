@@ -4,6 +4,7 @@ import HairlineFigure from "../components/HairlineFigure.astro";
 import CitationsChart from "../components/CitationsChart.astro";
 import research from "../data/research.json";
 import { site } from "../site.config";
+import { publicationList } from "../lib/schema";
 
 const scholar = site.links.find((l) => l.label === "Scholar")?.href;
 
@@ -19,7 +20,7 @@ const selected = site.selectedPublications
   .map((doi) => research.works.find((w) => w.doi === doi.toLowerCase()))
   .filter((w) => w !== undefined);
 ---
-<Base title="Research" description="Publications and citations, from ORCID and OpenAlex.">
+<Base title="Research & Publications" description="Publications and citations of Daniel Reichenpfader on clinical NLP, LLMs for radiology reports, information extraction and digital health, updated daily." jsonLd={publicationList(research.works)}>
   <section class="page-head">
     <div class="reveal">
       <div class="eyebrow">Clinical NLP · LLMs in medicine · digital health</div>
