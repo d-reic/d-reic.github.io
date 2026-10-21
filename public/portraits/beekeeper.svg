@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#efe2b8"/><stop offset="1" stop-color="#f6efd6"/></linearGradient></defs>
+  <rect width="480" height="600" fill="url(#g)"/>
+  <g fill="none" stroke="#1d1c1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M240 318c-20 0-34-6-40-14v32c0 8-24 18-62 30-40 13-58 40-62 84h328c-4-44-22-71-62-84-38-12-62-22-62-30v-32c-6 8-20 14-40 14z" fill="#fbf9f4" />
+  <ellipse cx="240" cy="236" rx="70" ry="84" fill="#fbf9f4" />
+  <path d="M212 232h10M258 232h10M236 250l-4 22h12M222 290c10 7 26 7 36 0" /><ellipse cx="240" cy="168" rx="132" ry="26" fill="#fbf9f4" /><path d="M182 160c0-44 26-66 58-66s58 22 58 66" fill="#fbf9f4"/><path d="M118 176c6 70 30 150 60 190M362 176c-6 70-30 150-60 190M150 182c8 70 30 140 52 170M330 182c-8 70-30 140-52 170" stroke-dasharray="3 5"/><path d="M380 120l10-6 10 6v12l-10 6-10-6zM404 96l8-5 8 5v10l-8 5-8-5z"/></g>
+  <text x="24" y="572" font-family="ui-monospace, Menlo, monospace" font-size="15" fill="#1d1c1a" opacity=".55">placeholder · beekeeper</text>
+</svg>

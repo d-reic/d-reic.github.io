@@ -1,0 +1,28 @@
+---
+import Base from "../../layouts/Base.astro";
+import HairlineFigure from "../../components/HairlineFigure.astro";
+import PostList from "../../components/PostList.astro";
+import { getPosts, tagCounts } from "../../lib/posts";
+
+const posts = await getPosts();
+const years = [...new Set(posts.map((p) => p.data.date.getFullYear()))];
+const tags = tagCounts(posts);
+---
+<Base title="Blog" description="All posts, newest first.">
+  <section class="page-head">
+    <div class="reveal">
+      <div class="eyebrow">{posts.length} posts</div>
+      <h1>Blog</h1>
+      <p>Essays, notes and the occasional half-finished thought. Newest first; there's also an <a href="/rss.xml">RSS feed</a>.</p>
+      <div class="chips">{tags.map(([t, c]) => <a class="chip" href={`/tags/${t}/`}>{t}<small>{c}</small></a>)}</div>
+    </div>
+    <HairlineFigure name="riffle" n={1} class="reveal reveal-2" label="A tray of cards; the one under the pointer stands up" />
+  </section>
+
+  {years.map((y) => (
+    <section>
+      <h2 class="year">{y}</h2>
+      <PostList posts={posts.filter((p) => p.data.date.getFullYear() === y)} short />
+    </section>
+  ))}
+</Base>

@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import HairlineFigure from "../components/HairlineFigure.astro";
+---
+<Base title="Not found">
+  <section class="measure" style="padding-top: 80px; text-align: center">
+    <div style="max-width: 260px; margin: 0 auto 28px">
+      <HairlineFigure name="query" play label="A question mark that turns toward the pointer" />
+    </div>
+    <div class="eyebrow">404</div>
+    <h1 style="font: 400 3rem/1.1 var(--serif); margin: 10px 0 14px">Nothing here.</h1>
+    <p style="color: var(--muted)">The page moved, or never existed. Try the <a href="/blog/">blog</a> or go <a href="/">home</a>.</p>
+  </section>
+</Base>

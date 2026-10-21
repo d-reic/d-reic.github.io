@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6e3d3"/><stop offset="1" stop-color="#edf2ea"/></linearGradient></defs>
+  <rect width="480" height="600" fill="url(#g)"/>
+  <g fill="none" stroke="#1d1c1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M240 318c-20 0-34-6-40-14v32c0 8-24 18-62 30-40 13-58 40-62 84h328c-4-44-22-71-62-84-38-12-62-22-62-30v-32c-6 8-20 14-40 14z" fill="#fbf9f4" />
+  <ellipse cx="240" cy="236" rx="70" ry="84" fill="#fbf9f4" />
+  <path d="M212 232h10M258 232h10M236 250l-4 22h12M222 290c10 7 26 7 36 0" /><circle cx="217" cy="232" r="18" /><circle cx="263" cy="232" r="18" /><path d="M235 232h10M199 230l-24-6M281 230l24-6" /><path d="M60 470c40-30 90-10 120-30s60-40 110-20 80 10 130-10M60 440c40-26 80-16 110-30" stroke-dasharray="1 0" opacity=".55"/><path d="M380 90l14 26-14 26-14-26z M380 60v16M380 156v16" /></g>
+  <text x="24" y="572" font-family="ui-monospace, Menlo, monospace" font-size="15" fill="#1d1c1a" opacity=".55">placeholder · cartographer</text>
+</svg>

@@ -1,0 +1,46 @@
+---
+import { site, portraits } from "../site.config";
+interface Props { n?: number | string; class?: string }
+const { n, class: cls } = Astro.props;
+const first = portraits[0];
+---
+<figure class:list={["fig portrait-fig", cls]} data-portraits={JSON.stringify(portraits)}>
+  <div class="fig-plate">
+    <img src={first.src} alt={`AI-generated portrait of ${site.shortName} ${first.caption}`} width="480" height="600" />
+  </div>
+  <figcaption>
+    {n !== undefined && <b>Fig. {n}</b>}
+    <span class="live" data-caption>{site.shortName}, {first.caption}</span>
+    {portraits.length > 1 && (
+      <button class="shuffle" type="button" aria-label="Show another portrait" title="Another one">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M13.5 8a5.5 5.5 0 1 1-1.6-3.9M13.5 2.5v2.6h-2.6" /></svg>
+      </button>
+    )}
+  </figcaption>
+</figure>
+
+<script is:inline define:vars={{ name: site.shortName }}>
+  // A different costume on every visit; the button cycles through the rest
+  // in a shuffled order so you never see the same one twice in a row.
+  document.querySelectorAll(".portrait-fig[data-portraits]").forEach((fig) => {
+    if (fig.dataset.ready) return;
+    fig.dataset.ready = "1";
+    const list = JSON.parse(fig.dataset.portraits);
+    const img = fig.querySelector("img");
+    const cap = fig.querySelector("[data-caption]");
+    const order = list.map((_, i) => i).sort(() => Math.random() - 0.5);
+    let i = 0;
+    const show = (p) => {
+      img.src = p.src;
+      img.alt = "AI-generated portrait of " + name + " " + p.caption;
+      cap.textContent = name + ", " + p.caption;
+    };
+    show(list[order[0]]);
+    list.forEach((p) => { new Image().src = p.src; });
+    fig.querySelector(".shuffle")?.addEventListener("click", () => {
+      i = (i + 1) % order.length;
+      img.classList.add("swap");
+      setTimeout(() => { show(list[order[i]]); img.classList.remove("swap"); }, 220);
+    });
+  });
+</script>

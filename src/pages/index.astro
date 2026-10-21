@@ -1,0 +1,67 @@
+---
+import Base from "../layouts/Base.astro";
+import HairlineFigure from "../components/HairlineFigure.astro";
+import Portrait from "../components/Portrait.astro";
+import PostList from "../components/PostList.astro";
+import { site } from "../site.config";
+import { getPosts, fmtDate } from "../lib/posts";
+
+const posts = await getPosts();
+const latest = posts[0];
+const featured = posts.find((p) => p.data.featured && p !== latest) ?? posts[1];
+const archive = posts.length > 2 ? posts[posts.length - 1] : undefined;
+const cards = [
+  latest && { label: "Newest", post: latest },
+  featured && { label: "Featured", post: featured },
+  archive && archive !== featured && { label: "From the archive", post: archive },
+].filter(Boolean) as { label: string; post: (typeof posts)[number] }[];
+---
+<Base>
+  <section class="hero">
+    <HairlineFigure
+      name="terrain"
+      n={1}
+      play
+      intensity={0.6}
+      plateClass="figure-wide"
+      class="reveal"
+      label="An isometric field of pillars that rises around the pointer"
+    />
+    <Portrait n={2} class="reveal reveal-2" />
+  </section>
+
+  <section class="intro measure reveal reveal-3">
+    <div class="eyebrow role">{site.role} · {site.location}</div>
+    {site.bio.map((p) => <p set:html={p} />)}
+
+    {site.now && (
+      <aside class="now">
+        <div class="eyebrow">Now <span style="opacity:.7">· updated {fmtDate(new Date(site.now.updated))}</span></div>
+        <ul>{site.now.items.map((i) => <li set:html={i} />)}</ul>
+      </aside>
+    )}
+  </section>
+
+  {cards.length > 0 && (
+    <section>
+      <div class="section-title"><h2>Writing</h2><span class="line"></span><a href="/blog/">All posts ({posts.length}) →</a></div>
+      <div class="cards">
+        {cards.map(({ label, post }) => (
+          <a class="card" href={`/blog/${post.id}/`}>
+            <span class="eyebrow">{label}</span>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="mono">{fmtDate(post.data.date)}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {posts.length > 3 && (
+    <section>
+      <div class="section-title"><h2>Recent</h2><span class="line"></span></div>
+      <PostList posts={posts.slice(0, 6)} />
+    </section>
+  )}
+</Base>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3d6ea"/><stop offset="1" stop-color="#f1ebf4"/></linearGradient></defs>
+  <rect width="480" height="600" fill="url(#g)"/>
+  <g fill="none" stroke="#1d1c1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M240 318c-20 0-34-6-40-14v32c0 8-24 18-62 30-40 13-58 40-62 84h328c-4-44-22-71-62-84-38-12-62-22-62-30v-32c-6 8-20 14-40 14z" fill="#fbf9f4" />
+  <ellipse cx="240" cy="236" rx="70" ry="84" fill="#fbf9f4" />
+  <path d="M212 232h10M258 232h10M236 250l-4 22h12M222 290c10 7 26 7 36 0" /><path d="M172 176c-10-40 40-70 92-64 50 6 72 34 62 54-30 14-110 20-154 10z" fill="#fbf9f4"/><path d="M262 110l8-14"/><path d="M340 470l60-150M400 320l10-24 8 4-8 24" /><circle cx="122" cy="420" r="30" fill="#fbf9f4"/><circle cx="112" cy="410" r="5" fill="#c2462a" stroke="none"/><circle cx="132" cy="414" r="5" fill="#d9a441" stroke="none"/><circle cx="120" cy="430" r="5" fill="#4d7aa8" stroke="none"/></g>
+  <text x="24" y="572" font-family="ui-monospace, Menlo, monospace" font-size="15" fill="#1d1c1a" opacity=".55">placeholder · painter</text>
+</svg>

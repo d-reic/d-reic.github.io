@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 600" width="480" height="600">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9e1e2"/><stop offset="1" stop-color="#e6f1f1"/></linearGradient></defs>
+  <rect width="480" height="600" fill="url(#g)"/>
+  <g fill="none" stroke="#1d1c1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M240 318c-20 0-34-6-40-14v32c0 8-24 18-62 30-40 13-58 40-62 84h328c-4-44-22-71-62-84-38-12-62-22-62-30v-32c-6 8-20 14-40 14z" fill="#fbf9f4" />
+  <ellipse cx="240" cy="236" rx="70" ry="84" fill="#fbf9f4" />
+  <path d="M212 232h10M258 232h10M236 250l-4 22h12M222 290c10 7 26 7 36 0" /><rect x="190" y="212" width="100" height="46" rx="20" fill="#ffffff88"/><path d="M170 232h20M290 232h20M306 232c28 0 30-60 30-110 0-12 10-12 10 0" /><circle cx="110" cy="140" r="8"/><circle cx="126" cy="110" r="5"/><circle cx="116" cy="84" r="3"/><circle cx="380" cy="170" r="6"/><circle cx="392" cy="140" r="4"/></g>
+  <text x="24" y="572" font-family="ui-monospace, Menlo, monospace" font-size="15" fill="#1d1c1a" opacity=".55">placeholder · diver</text>
+</svg>

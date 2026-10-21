@@ -1,0 +1,25 @@
+---
+// One of the 33 hairline figures, framed and captioned like a figure in a paper.
+// The caption's right half is live: hairline reports what the figure is doing.
+interface Props {
+  name: string;
+  n?: number | string;
+  caption?: string;
+  intensity?: number;
+  play?: boolean;
+  label?: string;
+  class?: string;
+  plateClass?: string;
+}
+const { name, n, caption, intensity, play = false, label, class: cls, plateClass = "" } = Astro.props;
+---
+<figure class:list={["fig", cls]}>
+  <div class:list={["fig-plate", plateClass]}>
+    <div data-hairline={name} data-intensity={intensity} data-play={play ? "true" : undefined} data-label={label}></div>
+  </div>
+  <figcaption>
+    {n !== undefined && <b>Fig. {n}</b>}
+    {caption && <span>{caption}</span>}
+    <span class="live" data-live aria-hidden="true"></span>
+  </figcaption>
+</figure>
