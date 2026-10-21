@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 // Set `site` to your final URL (needed for RSS + sitemap).
 // For a GitHub Pages project site (user.github.io/repo) also set `base: "/repo"`.
 export default defineConfig({
-  site: "https://d-reic.github.io",
+  site: "https://danielreichenpfader.com",
   integrations: [sitemap()],
   markdown: {
     shikiConfig: {
