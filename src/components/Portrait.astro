@@ -40,11 +40,15 @@ const first = portraits[0];
       img.alt = "AI-generated portrait of " + name + " " + p.caption;
       cap.textContent = name + ", " + p.caption;
     };
-    list.forEach((p) => { new Image().src = p.src; });
+    // Only the next portrait is fetched ahead of time, once the page has
+    // loaded, so a visit costs one image instead of the whole set.
+    const preloadNext = () => { new Image().src = list[order[(i + 1) % order.length]].src; };
+    if (document.readyState === "complete") preloadNext();
+    else addEventListener("load", preloadNext, { once: true });
     fig.querySelector(".shuffle")?.addEventListener("click", () => {
       i = (i + 1) % order.length;
       img.classList.add("swap");
-      setTimeout(() => { show(list[order[i]]); img.classList.remove("swap"); }, 220);
+      setTimeout(() => { show(list[order[i]]); img.classList.remove("swap"); preloadNext(); }, 220);
     });
   });
 </script>

@@ -11,13 +11,17 @@ const tags = tagCounts(posts);
 <Base title="Blog" description="All posts, newest first.">
   <section class="page-head">
     <div class="reveal">
-      <div class="eyebrow">{posts.length} posts</div>
+      <div class="eyebrow">{posts.length ? `${posts.length} ${posts.length === 1 ? "post" : "posts"}` : "Coming soon"}</div>
       <h1>Blog</h1>
       <p>Essays, notes and the occasional half-finished thought. Newest first; there's also an <a href="/rss.xml">RSS feed</a>.</p>
       <div class="chips">{tags.map(([t, c]) => <a class="chip" href={`/tags/${t}/`}>{t}<small>{c}</small></a>)}</div>
     </div>
     <HairlineFigure name="report" n={1} play class="reveal reveal-2" label="A radiology report on a clipboard; the line under the pointer lifts its tagged entities" />
   </section>
+
+  {posts.length === 0 && (
+    <p class="empty measure">Nothing here yet. The first post is in the works; the <a href="/rss.xml">RSS feed</a> will have it the moment it's out.</p>
+  )}
 
   {years.map((y) => (
     <section>

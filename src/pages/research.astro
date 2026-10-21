@@ -3,6 +3,9 @@ import Base from "../layouts/Base.astro";
 import HairlineFigure from "../components/HairlineFigure.astro";
 import CitationsChart from "../components/CitationsChart.astro";
 import research from "../data/research.json";
+import { site } from "../site.config";
+
+const scholar = site.links.find((l) => l.label === "Scholar")?.href;
 
 const types: Record<string, string> = {
   "journal-article": "Journal article",
@@ -12,13 +15,16 @@ const types: Record<string, string> = {
   "data-set": "Dataset",
 };
 const years = [...new Set(research.works.map((w) => w.year))];
+const selected = site.selectedPublications
+  .map((doi) => research.works.find((w) => w.doi === doi.toLowerCase()))
+  .filter((w) => w !== undefined);
 ---
 <Base title="Research" description="Publications and citations, from ORCID and OpenAlex.">
   <section class="page-head">
     <div class="reveal">
       <div class="eyebrow">Clinical NLP · LLMs in medicine · digital health</div>
       <h1>Research</h1>
-      <p>Natural language processing for radiology and clinical text, large language models in medicine, and digital health applications. The list below comes straight from my <a href={`https://orcid.org/${research.orcid}`}>ORCID</a> record.</p>
+      <p>Natural language processing for radiology and clinical text, large language models in medicine, and digital health applications. The list below comes straight from my <a href={`https://orcid.org/${research.orcid}`}>ORCID</a> record; citation counts are from OpenAlex, so they run lower than on my <a href={scholar}>Google Scholar</a> profile.</p>
     </div>
     <HairlineFigure
       name="lightbox"
@@ -28,6 +34,21 @@ const years = [...new Set(research.works.map((w) => w.year))];
       label="A lightbox with three x-rays; the film under the pointer swings out to be read"
     />
   </section>
+
+  {selected.length > 0 && (
+    <section>
+      <div class="section-title"><h2>Selected</h2><span class="line"></span></div>
+      <div class="cards selected">
+        {selected.map((w) => (
+          <a class="card" href={w.url}>
+            <span class="eyebrow">{[w.venue, w.year].filter(Boolean).join(" · ")}</span>
+            <h3>{w.title}</h3>
+            {w.citations != null && <span class="mono">{w.citations} citations</span>}
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
 
   <section>
     <div class="section-title"><h2>Citations</h2><span class="line"></span></div>

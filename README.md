@@ -15,7 +15,7 @@ npm run build            # static site in dist/
 1. **`src/site.config.ts`**: name, tagline, bio, "now" box, links, timeline, AI declaration, portrait list.
 2. **`astro.config.mjs`**: set `site` to your real URL (RSS + sitemap use it).
 3. Replace the placeholder portraits in `public/portraits/` (see below).
-4. Delete or rewrite the three sample posts in `src/content/blog/`.
+4. Write posts in `src/content/blog/` (`npm run new "Title"`).
 
 ## Writing posts
 

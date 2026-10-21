@@ -17,7 +17,7 @@ const { post, newer, older } = Astro.props;
 const { Content } = await render(post);
 const d = post.data;
 ---
-<Base title={d.title} description={d.description} image={d.cover} progress>
+<Base title={d.title} description={d.description} image={d.cover ?? `/og/blog/${post.id}.png`} progress>
   <article>
     <header class="post-head measure">
       <div class="post-meta">

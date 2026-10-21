@@ -32,6 +32,7 @@ export const site = {
   links: [
     { label: "Email", href: "mailto:hello@danielreichenpfader.com" },
     { label: "ORCID", href: "https://orcid.org/0000-0002-8052-3359" },
+    { label: "Scholar", href: "https://scholar.google.com/citations?user=bK0aJXwAAAAJ" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/daniel-reichenpfader/" },
     { label: "Instagram", href: "https://www.instagram.com/d_reic/" },
     { label: "RSS", href: "/rss.xml" },
@@ -43,6 +44,18 @@ export const site = {
     from a photo of me. Kudos to <a href="https://sunelehmann.com">Sune Lehmann</a> for the idea of a
     different me on every visit (and for this declaration). The moving line drawings are from
     <a href="https://hairline.lucasmarkes.com">hairline</a>.`,
+
+  // Shown first on the Research page, in this order. DOIs from your ORCID list.
+  selectedPublications: [
+    "10.1038/s41746-024-01219-0",
+    "10.2196/68998",
+    "10.1016/j.jbi.2023.104336",
+    "10.3390/higheredu2040039",
+  ],
+
+  // Privacy-friendly, cookie-free visitor counts (goatcounter.com, as on sunelehmann.com).
+  // Set to your site code, e.g. "danielreichenpfader" for danielreichenpfader.goatcounter.com.
+  goatcounter: null as string | null,
 
   nav: [
     { label: "Research", href: "/research/" },

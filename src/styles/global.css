@@ -7,10 +7,10 @@
   --muted: #77726a;
   --rule: #dcd5c6;
   --rule-strong: #bfb6a4;
-  --accent: #c2462a;
-  --accent-soft: #c2462a1a;
+  --accent: #1f3f7a;
+  --accent-soft: #1f3f7a1a;
   --code-bg: #efebe1;
-  --chart: #c2462a;
+  --chart: #2a5299;
 
   --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --sans: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -40,10 +40,10 @@
     --muted: #8f8a80;
     --rule: #2a2b31;
     --rule-strong: #3d3e45;
-    --accent: #f0784f;
-    --accent-soft: #f0784f1f;
+    --accent: #8ab0f0;
+    --accent-soft: #8ab0f01f;
     --code-bg: #1e1f24;
-    --chart: #e46a43;
+    --chart: #5d8ad8;
     --hairline-edge: #6d6a64;
     --hairline-mid: #47464a;
     --hairline-lo: #2c2d32;
@@ -58,10 +58,10 @@
   --muted: #8f8a80;
   --rule: #2a2b31;
   --rule-strong: #3d3e45;
-  --accent: #f0784f;
-  --accent-soft: #f0784f1f;
+  --accent: #8ab0f0;
+  --accent-soft: #8ab0f01f;
   --code-bg: #1e1f24;
-  --chart: #e46a43;
+  --chart: #5d8ad8;
   --hairline-edge: #6d6a64;
   --hairline-mid: #47464a;
   --hairline-lo: #2c2d32;
@@ -346,3 +346,13 @@ code { font-family: var(--mono); font-size: .86em; background: var(--code-bg); p
 .pubs .n { text-align: right; font: 400 .78rem var(--mono); color: var(--muted); }
 .pubs .n b { display: block; font: 400 1.3rem/1 var(--serif); color: var(--ink); }
 @media (max-width: 560px) { .pubs li { grid-template-columns: 1fr; gap: 6px; } .pubs .n { text-align: left; } .pubs .n b { display: inline; margin-right: 4px; } }
+.empty { margin-top: 64px; color: var(--muted); text-align: center; }
+.cards.selected { grid-template-columns: repeat(2, 1fr); }
+.cards.selected h3 { font-size: 1.25rem; }
+@media (max-width: 760px) { .cards.selected { grid-template-columns: 1fr; } }
+
+/* ---------- Easter egg ---------- */
+.egg-confetti { position: fixed; inset: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 100; }
+.egg-note { position: fixed; left: 50%; bottom: 32px; transform: translateX(-50%); z-index: 101; padding: 10px 16px; border-radius: 999px;
+  background: var(--ink); color: var(--bg); font: 400 .82rem var(--mono); animation: egg-in .3s ease both, egg-in .4s ease 2.8s reverse forwards; }
+@keyframes egg-in { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
