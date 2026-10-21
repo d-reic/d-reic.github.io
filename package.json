@@ -4,11 +4,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/fetch-research.mjs",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "new": "node scripts/new-post.mjs",
-    "portraits": "node scripts/portraits.mjs"
+    "portraits": "node scripts/portraits.mjs",
+    "research": "node scripts/fetch-research.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.19",

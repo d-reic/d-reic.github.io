@@ -1,0 +1,59 @@
+---
+// Citations per year, from src/data/research.json (ORCID + OpenAlex, refreshed
+// on every build). Plain HTML bars: crisp at any width, no chart library.
+// `compact` is the home-page version: no gridlines, no table.
+import research from "../data/research.json";
+
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+
+// Start at the first year with citations so the chart isn't mostly empty.
+const firstCited = research.perYear.findIndex((d) => d.citations > 0);
+const years = research.perYear.slice(Math.max(0, firstCited));
+const thisYear = new Date(research.fetchedAt).getFullYear();
+const max = Math.max(...years.map((d) => d.citations), 1);
+
+// A round axis maximum with 3–5 gridlines.
+const raw = max / 4;
+const mag = 10 ** Math.floor(Math.log10(raw));
+const step = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((s) => s >= raw)!;
+const top = Math.ceil(max / step) * step;
+const ticks = Array.from({ length: top / step + 1 }, (_, i) => i * step);
+
+const last = years[years.length - 1];
+const summary = `Citations per year: ${years.map((d) => `${d.year}: ${d.citations}${d.year === thisYear ? " so far" : ""}`).join(", ")}.`;
+---
+<figure class:list={["cites", { compact }]}>
+  <div class="cites-plot" role="img" aria-label={summary}>
+    {!compact && (
+      <div class="cites-grid" aria-hidden="true">
+        {ticks.map((t) => <span style={`bottom:${(t / top) * 100}%`}><i>{t}</i></span>)}
+      </div>
+    )}
+    <div class="cites-bars">
+      {years.map((d) => (
+        <div class="col" tabindex="0" aria-label={`${d.year}: ${d.citations} citations${d.year === thisYear ? " so far" : ""}`}>
+          <div class:list={["bar", { partial: d.year === thisYear }]} style={`height:${(d.citations / top) * 100}%`}>
+            {d === last && <b class="val">{d.citations}</b>}
+          </div>
+          <span class="tip" aria-hidden="true">{d.year} · {d.citations} citations{d.year === thisYear && " so far"}</span>
+          <span class="yr" aria-hidden="true">{compact ? `’${String(d.year).slice(2)}` : d.year}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+  <figcaption>
+    Citations per year{last.year === thisYear && <>; {thisYear} so far <span class="swatch" aria-hidden="true"></span></>}.
+    Source: <a href={`https://orcid.org/${research.orcid}`}>ORCID</a> + <a href="https://openalex.org">OpenAlex</a>,
+    updated {new Date(research.fetchedAt).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}.
+  </figcaption>
+  {!compact && (
+    <details class="cites-table">
+      <summary>Show as table</summary>
+      <table>
+        <thead><tr><th>Year</th><th>Citations</th></tr></thead>
+        <tbody>{years.map((d) => <tr><td>{d.year}{d.year === thisYear && " (so far)"}</td><td>{d.citations}</td></tr>)}</tbody>
+      </table>
+    </details>
+  )}
+</figure>

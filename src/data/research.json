@@ -1,0 +1,329 @@
+{
+  "fetchedAt": "2026-10-21T20:41:29.043Z",
+  "orcid": "0000-0002-8052-3359",
+  "totals": {
+    "citations": 415,
+    "hIndex": 9,
+    "publications": 32
+  },
+  "perYear": [
+    {
+      "year": 2020,
+      "citations": 0
+    },
+    {
+      "year": 2021,
+      "citations": 0
+    },
+    {
+      "year": 2022,
+      "citations": 7
+    },
+    {
+      "year": 2023,
+      "citations": 13
+    },
+    {
+      "year": 2024,
+      "citations": 60
+    },
+    {
+      "year": 2025,
+      "citations": 136
+    },
+    {
+      "year": 2026,
+      "citations": 199
+    }
+  ],
+  "works": [
+    {
+      "title": "The consensus-based CINEX guideline for reporting clinical information extraction studies",
+      "year": 2026,
+      "type": "journal-article",
+      "venue": "Journal of the American Medical Informatics Association",
+      "doi": "10.1093/jamia/ocag136",
+      "url": "https://doi.org/10.1093/jamia/ocag136",
+      "citations": 1
+    },
+    {
+      "title": "Detecting Suicidal Ideation Signals in Synthetic Conversations with an LLM-Based Mental Health Chatbot: Experimental study",
+      "year": 2026,
+      "type": "journal-article",
+      "venue": "Journal of Technology in Behavioral Science",
+      "doi": "10.1007/s41347-026-00647-x",
+      "url": "https://doi.org/10.1007/s41347-026-00647-x",
+      "citations": 1
+    },
+    {
+      "title": "RadEx: A Framework for Structured Information Extraction from Radiology Reports Based on Large Language Models",
+      "year": 2026,
+      "type": "book-chapter",
+      "venue": "Studies in Health Technology and Informatics",
+      "doi": "10.3233/shti260053",
+      "url": "https://doi.org/10.3233/shti260053",
+      "citations": 1
+    },
+    {
+      "title": "Semantic retrieval-augmented translation for radiology reports using small language models: Algorithm development and evaluation",
+      "year": 2026,
+      "type": "journal-article",
+      "venue": "GMS Medizinische Informatik, Biometrie und Epidemiologie",
+      "doi": "10.3205/mibe000313",
+      "url": "https://doi.org/10.3205/mibe000313",
+      "citations": null
+    },
+    {
+      "title": "An Ensemble-Based Approach to Validating AI-Generated Clinical Discharge Summaries",
+      "year": 2026,
+      "type": "conference-paper",
+      "venue": "IEEE International Symposium on Computer-Based Medical Systems (CBMS)",
+      "doi": "10.1109/cbms69103.2026.00201",
+      "url": "https://doi.org/10.1109/cbms69103.2026.00201",
+      "citations": 0
+    },
+    {
+      "title": "Design and Evaluation of an Open-Source, Locally Deployed Chatbot System for Higher Education",
+      "year": 2026,
+      "type": "book-chapter",
+      "venue": "Lecture notes in computer science",
+      "doi": "10.1007/978-3-032-03873-9_50",
+      "url": "https://doi.org/10.1007/978-3-032-03873-9_50",
+      "citations": 0
+    },
+    {
+      "title": "Scientific Evidence for Clinical Text Summarization Using Large Language Models: Scoping Review",
+      "year": 2025,
+      "type": "journal-article",
+      "venue": "Journal of Medical Internet Research",
+      "doi": "10.2196/68998",
+      "url": "https://doi.org/10.2196/68998",
+      "citations": 79
+    },
+    {
+      "title": "Large Language Model–Based Patient Simulation to Foster Communication Skills in Health Care Professionals: User-Centered Development and Usability Study",
+      "year": 2025,
+      "type": "journal-article",
+      "venue": "JMIR Medical Education",
+      "doi": "10.2196/81271",
+      "url": "https://doi.org/10.2196/81271",
+      "citations": 23
+    },
+    {
+      "title": "Enhancing Bidirectional Encoder Representations From Transformers (BERT) With Frame Semantics to Extract Clinically Relevant Information From German Mammography Reports: Algorithm Development and Validation",
+      "year": 2025,
+      "type": "journal-article",
+      "venue": "Journal of Medical Internet Research",
+      "doi": "10.2196/68427",
+      "url": "https://doi.org/10.2196/68427",
+      "citations": 4
+    },
+    {
+      "title": "Opportunities, Requirements, and Risks of a Student Mental Health Chatbot: A Qualitative User-Centered, Multi-Method Approach",
+      "year": 2025,
+      "type": "book-chapter",
+      "venue": "Studies in Health Technology and Informatics",
+      "doi": "10.3233/shti250221",
+      "url": "https://doi.org/10.3233/shti250221",
+      "citations": 3
+    },
+    {
+      "title": "Improving the Reporting Quality of Studies on Information Extraction From Clinical Texts: Protocol for the Development of a Consensus-Based Reporting Guideline",
+      "year": 2025,
+      "type": "journal-article",
+      "venue": "JMIR Research Protocols",
+      "doi": "10.2196/76776",
+      "url": "https://doi.org/10.2196/76776",
+      "citations": 2
+    },
+    {
+      "title": "User-Centered Design of Mica, a Mental Health App Supporting Students in Higher Education",
+      "year": 2025,
+      "type": "book-chapter",
+      "venue": "Studies in Health Technology and Informatics",
+      "doi": "10.3233/shti251049",
+      "url": "https://doi.org/10.3233/shti251049",
+      "citations": 0
+    },
+    {
+      "title": "Swiss-Mammo: A physician-written, synthetic dataset of German mammography reports",
+      "year": 2025,
+      "type": "data-set",
+      "venue": null,
+      "doi": "10.13026/95cy-rc09",
+      "url": "https://doi.org/10.13026/95cy-rc09",
+      "citations": null
+    },
+    {
+      "title": "Protocol for a Consensus-based Reporting Guideline for Studies on Information Extraction from Clinical Texts (CINEX) (Preprint)",
+      "year": 2025,
+      "type": "preprint",
+      "venue": null,
+      "doi": "10.2196/preprints.76776",
+      "url": "https://doi.org/10.2196/preprints.76776",
+      "citations": 0
+    },
+    {
+      "title": "A scoping review of large language model based approaches for information extraction from radiology reports",
+      "year": 2024,
+      "type": "journal-article",
+      "venue": "npj Digital Medicine",
+      "doi": "10.1038/s41746-024-01219-0",
+      "url": "https://doi.org/10.1038/s41746-024-01219-0",
+      "citations": 96
+    },
+    {
+      "title": "Large Language Model-Based Evaluation of Medical Question Answering Systems: Algorithm Development and Case Study",
+      "year": 2024,
+      "type": "book-chapter",
+      "venue": "dHealth 2024",
+      "doi": "10.3233/shti240006",
+      "url": "https://doi.org/10.3233/shti240006",
+      "citations": 11
+    },
+    {
+      "title": "How to Consider Health Literacy in Digital Health Interventions?",
+      "year": 2024,
+      "type": "book-chapter",
+      "venue": "Communications in computer and information science",
+      "doi": "10.1007/978-3-031-61966-3_29",
+      "url": "https://doi.org/10.1007/978-3-031-61966-3_29",
+      "citations": 4
+    },
+    {
+      "title": "Person-based design and evaluation of MIA, a digital medical interview assistant for radiology",
+      "year": 2024,
+      "type": "journal-article",
+      "venue": "Frontiers in Artificial Intelligence",
+      "doi": "10.3389/frai.2024.1431156",
+      "url": "https://doi.org/10.3389/frai.2024.1431156",
+      "citations": 3
+    },
+    {
+      "title": "Preparing for Hospital at Home: A Review of the Current Landscape of Training Practices",
+      "year": 2024,
+      "type": "book-chapter",
+      "venue": "Studies in health technology and informatics",
+      "doi": "10.3233/shti241060",
+      "url": "https://doi.org/10.3233/shti241060",
+      "citations": 2
+    },
+    {
+      "title": "Towards a Reporting Guideline for Studies on Information Extraction from Clinical Texts",
+      "year": 2024,
+      "type": "book-chapter",
+      "venue": "Studies in health technology and informatics",
+      "doi": "10.3233/shti240744",
+      "url": "https://doi.org/10.3233/shti240744",
+      "citations": 2
+    },
+    {
+      "title": "Success Factors for Usability Testing of Digital Health Solutions",
+      "year": 2024,
+      "type": "book-chapter",
+      "venue": "Studies in health technology and informatics",
+      "doi": "10.3233/shti240439",
+      "url": "https://doi.org/10.3233/shti240439",
+      "citations": 1
+    },
+    {
+      "title": "Simulating Diverse Patient Populations Using Patient Vignettes and Large Language Models",
+      "year": 2024,
+      "type": "conference-paper",
+      "venue": "Proceedings of the First Workshop on Patient-Oriented Language Processing (CL4Health) @ LREC-COLING 2024",
+      "doi": null,
+      "url": "https://aclanthology.org/2024.cl4health-1.3",
+      "citations": null
+    },
+    {
+      "title": "Sentiment analysis of clinical narratives: A scoping review",
+      "year": 2023,
+      "type": "journal-article",
+      "venue": "Journal of Biomedical Informatics",
+      "doi": "10.1016/j.jbi.2023.104336",
+      "url": "https://doi.org/10.1016/j.jbi.2023.104336",
+      "citations": 79
+    },
+    {
+      "title": "Assessing the Potential and Risks of AI-Based Tools in Higher Education: Results from an eSurvey and SWOT Analysis",
+      "year": 2023,
+      "type": "journal-article",
+      "venue": "Trends in Higher Education",
+      "doi": "10.3390/higheredu2040039",
+      "url": "https://doi.org/10.3390/higheredu2040039",
+      "citations": 44
+    },
+    {
+      "title": "What Do Autistic People Discuss on Twitter? An Approach Using BERTopic Modelling",
+      "year": 2023,
+      "type": "book-chapter",
+      "venue": "Caring is Sharing – Exploiting the Value in Data for Health and Innovation",
+      "doi": "10.3233/shti230161",
+      "url": "https://doi.org/10.3233/shti230161",
+      "citations": 17
+    },
+    {
+      "title": "Exploring the Evolution of Social Media in Mental Health Interventions: A Mapping Review",
+      "year": 2023,
+      "type": "journal-article",
+      "venue": "Yearbook of Medical Informatics",
+      "doi": "10.1055/s-0043-1768730",
+      "url": "https://doi.org/10.1055/s-0043-1768730",
+      "citations": 9
+    },
+    {
+      "title": "Designing a Digital Medical Interview Assistant for Radiology",
+      "year": 2023,
+      "type": "book-chapter",
+      "venue": "dHealth 2023",
+      "doi": "10.3233/shti230012",
+      "url": "https://doi.org/10.3233/shti230012",
+      "citations": 8
+    },
+    {
+      "title": "Large language model-based information extraction from free-text radiology reports: a scoping review protocol",
+      "year": 2023,
+      "type": "preprint",
+      "venue": "medRxiv",
+      "doi": "10.1101/2023.07.28.23292031",
+      "url": "https://doi.org/10.1101/2023.07.28.23292031",
+      "citations": 4
+    },
+    {
+      "title": "User-Centered Design of a Speech-Based Application to Support Caregivers",
+      "year": 2023,
+      "type": "book-chapter",
+      "venue": "Studies in health technology and informatics",
+      "doi": "10.3233/shti230265",
+      "url": "https://doi.org/10.3233/shti230265",
+      "citations": 1
+    },
+    {
+      "title": "Digitizing the ECG Workflow – A State-of-the-Art Analysis",
+      "year": 2022,
+      "type": "journal-article",
+      "venue": "Studies in Health Technology and Informatics",
+      "doi": "10.3233/shti220327",
+      "url": "https://doi.org/10.3233/shti220327",
+      "citations": 2
+    },
+    {
+      "title": "Requirements and Architecture of a Cloud Based Insomnia Therapy and Diagnosis Platform: A Smart Cities Approach",
+      "year": 2021,
+      "type": "journal-article",
+      "venue": "Smart Cities",
+      "doi": "10.3390/smartcities4040070",
+      "url": "https://doi.org/10.3390/smartcities4040070",
+      "citations": 8
+    },
+    {
+      "title": "Assessing and Improving the Usability of the Medical Data Models Portal",
+      "year": 2020,
+      "type": "journal-article",
+      "venue": "Studies in Health Technology and Informatics",
+      "doi": "10.3233/shti200097",
+      "url": "https://doi.org/10.3233/shti200097",
+      "citations": 10
+    }
+  ]
+}

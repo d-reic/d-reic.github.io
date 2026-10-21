@@ -1,0 +1,63 @@
+---
+import Base from "../layouts/Base.astro";
+import HairlineFigure from "../components/HairlineFigure.astro";
+import CitationsChart from "../components/CitationsChart.astro";
+import research from "../data/research.json";
+
+const types: Record<string, string> = {
+  "journal-article": "Journal article",
+  "conference-paper": "Conference paper",
+  "book-chapter": "Book chapter",
+  preprint: "Preprint",
+  "data-set": "Dataset",
+};
+const years = [...new Set(research.works.map((w) => w.year))];
+---
+<Base title="Research" description="Publications and citations, from ORCID and OpenAlex.">
+  <section class="page-head">
+    <div class="reveal">
+      <div class="eyebrow">Clinical NLP · LLMs in medicine · digital health</div>
+      <h1>Research</h1>
+      <p>Natural language processing for radiology and clinical text, large language models in medicine, and digital health applications. The list below comes straight from my <a href={`https://orcid.org/${research.orcid}`}>ORCID</a> record.</p>
+    </div>
+    <HairlineFigure
+      name="lightbox"
+      n={1}
+      play
+      class="reveal reveal-2"
+      label="A lightbox with three x-rays; the film under the pointer swings out to be read"
+    />
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Citations</h2><span class="line"></span></div>
+    <div class="research-strip">
+      <dl class="stats">
+        <div><dt>Citations</dt><dd>{research.totals.citations}</dd></div>
+        <div><dt>h-index</dt><dd>{research.totals.hIndex}</dd></div>
+        <div><dt>Publications</dt><dd>{research.totals.publications}</dd></div>
+      </dl>
+      <CitationsChart />
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Publications</h2><span class="line"></span></div>
+    {years.map((y) => (
+      <>
+        <h3 class="year">{y ?? "Undated"}</h3>
+        <ol class="pubs">
+          {research.works.filter((w) => w.year === y).map((w) => (
+            <li>
+              <div>
+                {w.url ? <a class="t" href={w.url}>{w.title}</a> : <span class="t">{w.title}</span>}
+                <div class="meta">{[types[w.type] ?? w.type, w.venue].filter(Boolean).join(" · ")}</div>
+              </div>
+              <div class="n">{w.citations != null && <><b>{w.citations}</b>{w.citations === 1 ? "citation" : "citations"}</>}</div>
+            </li>
+          ))}
+        </ol>
+      </>
+    ))}
+  </section>
+</Base>

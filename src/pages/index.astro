@@ -1,10 +1,11 @@
 ---
 import Base from "../layouts/Base.astro";
-import HairlineFigure from "../components/HairlineFigure.astro";
+import CitationsChart from "../components/CitationsChart.astro";
 import Portrait from "../components/Portrait.astro";
 import PostList from "../components/PostList.astro";
 import { site } from "../site.config";
 import { getPosts, fmtDate } from "../lib/posts";
+import research from "../data/research.json";
 
 const posts = await getPosts();
 const latest = posts[0];
@@ -17,28 +18,31 @@ const cards = [
 ].filter(Boolean) as { label: string; post: (typeof posts)[number] }[];
 ---
 <Base>
-  <section class="hero">
-    <HairlineFigure
-      name="lightbox"
-      n={1}
-      play
-      plateClass="figure-wide"
-      class="reveal"
-      label="A lightbox with three x-rays; the film under the pointer swings out to be read"
-    />
-    <Portrait n={2} class="reveal reveal-2" />
+  <section class="intro-grid">
+    <div class="intro reveal">
+      <div class="eyebrow role">{site.role} · {site.location}</div>
+      {site.bio.map((p) => <p set:html={p} />)}
+
+      {site.now && (
+        <aside class="now">
+          <div class="eyebrow">Now <span style="opacity:.7">· updated {fmtDate(new Date(site.now.updated))}</span></div>
+          <ul>{site.now.items.map((i) => <li set:html={i} />)}</ul>
+        </aside>
+      )}
+    </div>
+    <Portrait n={1} class="reveal reveal-2" />
   </section>
 
-  <section class="intro measure reveal reveal-3">
-    <div class="eyebrow role">{site.role} · {site.location}</div>
-    {site.bio.map((p) => <p set:html={p} />)}
-
-    {site.now && (
-      <aside class="now">
-        <div class="eyebrow">Now <span style="opacity:.7">· updated {fmtDate(new Date(site.now.updated))}</span></div>
-        <ul>{site.now.items.map((i) => <li set:html={i} />)}</ul>
-      </aside>
-    )}
+  <section>
+    <div class="section-title"><h2>Research</h2><span class="line"></span><a href="/research/">All publications ({research.totals.publications}) →</a></div>
+    <div class="research-strip">
+      <dl class="stats">
+        <div><dt>Citations</dt><dd>{research.totals.citations}</dd></div>
+        <div><dt>h-index</dt><dd>{research.totals.hIndex}</dd></div>
+        <div><dt>Publications</dt><dd>{research.totals.publications}</dd></div>
+      </dl>
+      <CitationsChart compact />
+    </div>
   </section>
 
   {cards.length > 0 && (

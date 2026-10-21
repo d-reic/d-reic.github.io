@@ -45,6 +45,7 @@ export const site = {
     <a href="https://hairline.lucasmarkes.com">hairline</a>.`,
 
   nav: [
+    { label: "Research", href: "/research/" },
     { label: "Blog", href: "/blog/" },
     { label: "About", href: "/about/" },
   ],
