@@ -143,8 +143,10 @@ code { font-family: var(--mono); font-size: .86em; background: var(--code-bg); p
 [data-hairline] { width: 100%; }
 
 /* ---------- Home ---------- */
-.hero { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 28px; align-items: end; padding-top: 36px; }
-.hero .fig-plate.figure-wide { display: flex; align-items: center; justify-content: center; height: 300px; }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 28px; align-items: start; padding-top: 36px; }
+.hero .fig figcaption { min-height: 2.8em; }
+/* Fig. 1 sits straight on the page: no card, and hairline's plates take the page colour. */
+.hero .fig-plate.figure-wide { display: flex; align-items: center; justify-content: center; height: 300px; background: none; border-color: transparent; --hairline-plate: var(--bg); }
 .hero .fig-plate.figure-wide [data-hairline] { width: 375px; max-width: 100%; }
 @media (max-width: 760px) {
   .hero { grid-template-columns: minmax(0, 1fr); }
