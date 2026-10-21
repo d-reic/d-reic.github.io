@@ -7,15 +7,15 @@ export const site = {
   tagline: "Working Notes",
   description:
     "Daniel Reichenpfader: researcher, app developer and project manager working on eHealth, NLP and AI.",
-  role: "Research Associate · Bern University of Applied Sciences",
+  role: "Tenure-track Professor · Bern University of Applied Sciences",
   location: "Switzerland",
 
   // Home page intro. Plain HTML is allowed.
   bio: [
     `Hej! Salü! Servus! I'm Daniel, a researcher, app developer and project manager with a focus on
      eHealth and well-being.`,
-    `I'm a research associate at <a href="https://www.bfh.ch">Bern University of Applied Sciences</a>
-     and a PhD candidate at the Université de Genève, working on natural language processing in
+    `I'm a tenure-track professor at <a href="https://www.bfh.ch">Bern University of Applied Sciences</a>
+     and about to finish my PhD at the Université de Genève on natural language processing in
      radiology. More broadly, I'm trying to make healthcare more accessible and efficient with AI and NLP.`,
   ],
 
@@ -23,8 +23,8 @@ export const site = {
   now: {
     updated: "2026-10-21",
     items: [
-      "Research on clinical NLP, conversational agents and AI tools for higher education.",
-      "PhD on natural language processing in radiology.",
+            "Settling into a tenure-track professorship at BFH.",
+      "Wrapping up my PhD on natural language processing in radiology.",
       "Building <a href=\"https://amrap-app.com\">AMRAP</a>, an iOS app for box fitness athletes.",
     ],
   },
@@ -51,13 +51,14 @@ export const site = {
 
   // About page: karpathy.ai-style timelines. Newest first.
   experience: [
+    { when: "2026 — now", what: "Tenure-track Professor", where: "Bern University of Applied Sciences", note: "" },
     { when: "2025", what: "HORIZON Europe Expert", where: "European Commission", note: "Evaluating project proposals for the HORIZON Europe programme." },
-    { when: "2022 — now", what: "Research Associate", where: "Bern University of Applied Sciences", note: "Research projects on clinical NLP, conversational agents and AI-based tools for higher education." },
+    { when: "2022 — 2026", what: "Research Associate", where: "Bern University of Applied Sciences", note: "Research projects on clinical NLP, conversational agents and AI-based tools for higher education." },
     { when: "2020 — 2022", what: "R&D Assistant", where: "Solgenium", note: "Android development, stakeholder analyses and research proposals." },
     { when: "2018 — 2019", what: "Student Trainee", where: "AVL List", note: "Maintaining and assembling hard- and software, company- and worldwide." },
   ],
   education: [
-    { when: "2023 — now", what: "PhD in Life Sciences", where: "Université de Genève", note: "Natural language processing in radiology." },
+    { when: "2023 — 2026", what: "PhD in Life Sciences", where: "Université de Genève", note: "Natural language processing in radiology. Nearly done." },
     { when: "2020 —", what: "MSc Information Management", where: "FH JOANNEUM, Austria", note: "Specialisation in software and digital experience engineering." },
     { when: "2021 — 2022", what: "Exchange semester", where: "Jönköping University, Sweden", note: "Mobile development, iOS, semantic web technologies." },
     { when: "2017 — 2020", what: "BSc Medical Informatics", where: "FH JOANNEUM, Austria", note: "Specialisation in digital personal assistance systems." },
