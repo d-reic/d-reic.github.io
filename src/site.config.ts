@@ -41,7 +41,7 @@ export const site = {
   ],
 
   // Transparency note in the footer (adapted from sunelehmann.com). HTML allowed.
-  aiDeclaration: `<b>AI declaration:</b> Every blog post is <mark class="hl">typed by hand by an actual human</mark>:
+  aiDeclaration: `<b>AI declaration:</b> Every blog post is <mark class="hl">typed by hand by an actual human</mark> (me):
     ten fingers, too much coffee, and the occasional typo as a certificate of authenticity. AI may proofread,
     but it doesn't get the keyboard. The site itself was built with AI (Claude Code), and the portraits are
     AI-generated from a photo of me. Kudos to <a href="https://sunelehmann.com">Sune Lehmann</a> for the idea
