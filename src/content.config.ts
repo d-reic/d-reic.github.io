@@ -13,7 +13,8 @@ const blog = defineCollection({
     // Header art: either an AI-generated image in /public/covers …
     cover: z.string().optional(),
     coverCaption: z.string().optional(),
-    // … or one of the 33 hairline figures (e.g. "terrain", "branches").
+    // … or a hairline figure: one of the package's 33 (e.g. "terrain", "branches")
+    // or a custom one in src/figures/ (e.g. "lightbox").
     figure: z.string().optional(),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),

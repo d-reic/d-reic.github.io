@@ -30,6 +30,10 @@ Front matter fields (see `src/content.config.ts`):
 | `featured` | show in the "Featured" card on the home page |
 | `draft` | visible in `npm run dev`, excluded from the build |
 
+Custom figures live in `src/figures/<name>.js`, drawn with the `hairline-create` skill
+(`.claude/skills/hairline-create`, e.g. `/hairline-create a radiology lightbox`). Drop the
+skill's `<name>.js` there as it is and use `<name>` anywhere a figure name goes; `lightbox` is the first.
+
 Inline figure inside a post (plain HTML works in Markdown):
 
 ```html
