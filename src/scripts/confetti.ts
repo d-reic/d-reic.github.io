@@ -4,14 +4,17 @@
 const CODE = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
 const COLORS = ["#1f3f7a", "#2a5299", "#5d8ad8", "#8ab0f0", "#d9a441", "#1d1c1a"];
 
-let pos = 0;
+console.log("%cPsst: ↑ ↑ ↓ ↓ ← → ← → B A", "font: 14px monospace; color: #2a5299");
+
+// The last keys pressed; matching against the tail forgives stray keys before
+// the code (e.g. a third ↑).
+let recent: string[] = [];
 addEventListener("keydown", (e) => {
   const t = e.target as HTMLElement;
   if (t.isContentEditable || /^(input|textarea|select)$/i.test(t.tagName)) return;
-  const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-  pos = key === CODE[pos] ? pos + 1 : key === CODE[0] ? 1 : 0;
-  if (pos === CODE.length) {
-    pos = 0;
+  recent = [...recent, e.key.length === 1 ? e.key.toLowerCase() : e.key].slice(-CODE.length);
+  if (recent.join() === CODE.join()) {
+    recent = [];
     celebrate();
   }
 });

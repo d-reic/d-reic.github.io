@@ -356,3 +356,5 @@ code { font-family: var(--mono); font-size: .86em; background: var(--code-bg); p
 .egg-note { position: fixed; left: 50%; bottom: 32px; transform: translateX(-50%); z-index: 101; padding: 10px 16px; border-radius: 999px;
   background: var(--ink); color: var(--bg); font: 400 .82rem var(--mono); animation: egg-in .3s ease both, egg-in .4s ease 2.8s reverse forwards; }
 @keyframes egg-in { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }
+.egg-hint { opacity: .25; letter-spacing: .08em; cursor: help; transition: opacity .3s; }
+.egg-hint:hover { opacity: 1; color: var(--accent); }

@@ -69,7 +69,7 @@ const canonical = new URL(path, Astro.site);
       <div class="ruler" aria-hidden="true"></div>
       {site.aiDeclaration && <p class="ai-declaration" set:html={site.aiDeclaration} />}
       <div class="row">
-        <span class="mono">© {new Date().getFullYear()} {site.name}</span>
+        <span class="mono">© {new Date().getFullYear()} {site.name} <span class="egg-hint" title="Psst, try typing this on the page">· ↑↑↓↓←→←→BA</span></span>
         <div class="links">
           {site.links.map((l) => <a href={l.href}>{l.label}</a>)}
         </div>
