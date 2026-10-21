@@ -23,7 +23,7 @@ export const site = {
   now: {
     updated: "2026-10-21",
     items: [
-            "Settling into a tenure-track professorship at BFH.",
+      "Settling into a tenure-track professorship at BFH.",
       "Wrapping up my PhD on natural language processing in radiology.",
       "Building <a href=\"https://amrap-app.com\">AMRAP</a>, an iOS app for box fitness athletes.",
     ],
