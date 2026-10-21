@@ -56,6 +56,10 @@ export const site = {
     "10.3390/higheredu2040039",
   ],
 
+  // Research page: talks and invited lectures, newest first. The section hides while empty.
+  // kind is a short label, e.g. "Invited talk", "Conference talk", "Guest lecture", "Keynote".
+  talks: [] as { when: string; kind: string; title: string; event: string; note?: string; href?: string }[],
+
   // Privacy-friendly, cookie-free visitor counts (goatcounter.com, as on sunelehmann.com).
   // Set to your site code, e.g. "danielreichenpfader" for danielreichenpfader.goatcounter.com.
   goatcounter: "dareic" as string | null,

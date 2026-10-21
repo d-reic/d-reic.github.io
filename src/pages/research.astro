@@ -63,6 +63,24 @@ const selected = site.selectedPublications
     </div>
   </section>
 
+  {site.talks.length > 0 && (
+    <section>
+      <div class="section-title"><h2>Talks &amp; invited lectures</h2><span class="line"></span></div>
+      <ol class="timeline">
+        {site.talks.map((t) => (
+          <li>
+            <span class="mono">{t.when}</span>
+            <div>
+              <div class="w">{t.href ? <a href={t.href}>{t.title}</a> : t.title}</div>
+              <div class="note">{[t.kind, t.event].join(" · ")}</div>
+              {t.note && <div class="note">{t.note}</div>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )}
+
   <section>
     <div class="section-title"><h2>Publications</h2><span class="line"></span></div>
     {years.map((y) => (
