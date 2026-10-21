@@ -290,3 +290,4 @@ code { font-family: var(--mono); font-size: .86em; background: var(--code-bg); p
 .reveal-2 { animation-delay: .08s; }
 .reveal-3 { animation-delay: .16s; }
 @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.about-main > .fig { max-width: 420px; }

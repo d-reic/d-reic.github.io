@@ -20,18 +20,41 @@ import { site } from "../site.config";
       <h1>About</h1>
       <div class="intro">{site.bio.map((p) => <p set:html={p} />)}</div>
 
-      <div class="section-title" style="margin-top: 56px"><h2>Path so far</h2><span class="line"></span></div>
-      <ol class="timeline">
-        {site.timeline.map((t) => (
+      {[
+        { title: "Experience", items: site.experience },
+        { title: "Education", items: site.education },
+      ].map((section) => (
+        <>
+          <div class="section-title" style="margin-top: 56px"><h2>{section.title}</h2><span class="line"></span></div>
+          <ol class="timeline">
+            {section.items.map((t) => (
+              <li>
+                <span class="mono">{t.when}</span>
+                <div>
+                  <div class="w">{t.what} <span class="where">· {t.where}</span></div>
+                  {t.note && <div class="note">{t.note}</div>}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </>
+      ))}
+
+      <div class="section-title" style="margin-top: 56px"><h2>Projects</h2><span class="line"></span></div>
+      <ul class="timeline">
+        {site.projects.map((p) => (
           <li>
-            <span class="mono">{t.when}</span>
+            <span class="mono">{p.links.map((l, i) => <>{i > 0 && " · "}<a href={l.href}>{l.label}</a></>)}</span>
             <div>
-              <div class="w">{t.what} <span class="where">· {t.where}</span></div>
-              {t.note && <div class="note">{t.note}</div>}
+              <div class="w">{p.name}</div>
+              <div class="note">{p.note}</div>
             </div>
           </li>
         ))}
-      </ol>
+      </ul>
+
+      <div class="section-title" style="margin-top: 56px"><h2>Toolbox</h2><span class="line"></span></div>
+      <div class="chips" style="margin-bottom: 48px">{site.skills.map((s) => <span class="chip">{s}</span>)}</div>
 
       <HairlineFigure name="branches" n={2} caption="The usual path, roughly." play class="" plateClass="" />
     </div>
