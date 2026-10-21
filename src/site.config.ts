@@ -55,7 +55,7 @@ export const site = {
 
   // Privacy-friendly, cookie-free visitor counts (goatcounter.com, as on sunelehmann.com).
   // Set to your site code, e.g. "danielreichenpfader" for danielreichenpfader.goatcounter.com.
-  goatcounter: null as string | null,
+  goatcounter: "dareic" as string | null,
 
   nav: [
     { label: "Research", href: "/research/" },
