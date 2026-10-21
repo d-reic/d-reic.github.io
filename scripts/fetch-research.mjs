@@ -80,9 +80,20 @@ async function main() {
     perYear,
     works,
   };
+  const summary = `${works.length} publications, ${data.totals.citations} citations, h-index ${data.totals.hIndex}`;
+
+  // Locally, leave the file alone when only the timestamp would change, so builds don't
+  // dirty the git tree. CI always writes it: the page shows fetchedAt as "updated".
+  let saved = null;
+  try { saved = JSON.parse(readFileSync(OUT, "utf8")); } catch {}
+  if (!process.env.CI && saved && JSON.stringify({ ...saved, fetchedAt: null }) === JSON.stringify({ ...data, fetchedAt: null })) {
+    console.log(`research: unchanged (${summary})`);
+    return;
+  }
+
   mkdirSync("src/data", { recursive: true });
   writeFileSync(OUT, JSON.stringify(data, null, 2) + "\n");
-  console.log(`research: ${works.length} publications, ${data.totals.citations} citations, h-index ${data.totals.hIndex}`);
+  console.log(`research: ${summary}`);
 }
 
 main().catch((err) => {
