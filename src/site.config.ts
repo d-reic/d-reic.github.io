@@ -25,7 +25,7 @@ export const site = {
     items: [
       "Research on clinical NLP, conversational agents and AI tools for higher education.",
       "PhD on natural language processing in radiology.",
-      "Building <a href=\"https://amrap.danielreichenpfader.com\">AMRAP</a>, an iOS app for box fitness athletes.",
+      "Building <a href=\"https://amrap-app.com\">AMRAP</a>, an iOS app for box fitness athletes.",
     ],
   },
 
@@ -62,7 +62,7 @@ export const site = {
     { when: "2019 — 2020", what: "Exchange semester", where: "Bern University of Applied Sciences", note: "Usability testing, augmented reality, medical data integration." },
   ],
   projects: [
-    { name: "AMRAP: WOD Logs & PRs", note: "Native iOS app for box fitness athletes.", links: [{ label: "Website", href: "https://amrap.danielreichenpfader.com" }, { label: "App Store", href: "https://apps.apple.com/ch/app/amrap-wod-log-prs/id6743651394" }] },
+    { name: "AMRAP: WOD Logs & PRs", note: "Native iOS app for box fitness athletes.", links: [{ label: "Website", href: "https://amrap-app.com" }, { label: "App Store", href: "https://apps.apple.com/ch/app/amrap-wod-log-prs/id6743651394" }] },
     { name: "Der Harfenist", note: "Harp music for your event.", links: [{ label: "Website", href: "https://der-harfenist.ch" }] },
     { name: "Facilitation & Digital Experience Engineering", note: "About to start my own company. Stay tuned!", links: [] },
   ],
