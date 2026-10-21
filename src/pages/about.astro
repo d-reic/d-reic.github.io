@@ -52,11 +52,15 @@ import { site } from "../site.config";
           </li>
         ))}
       </ul>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 28px">
+        <HairlineFigure name="barbell" n={2} caption="AMRAP, loaded." play label="A loaded barbell; the pointer's height sets the load and plates slide on and off" />
+        <HairlineFigure name="harp" n={3} caption="Der Harfenist." play label="A concert harp; the strings under the pointer are plucked and ring" />
+      </div>
 
       <div class="section-title" style="margin-top: 56px"><h2>Toolbox</h2><span class="line"></span></div>
       <div class="chips" style="margin-bottom: 48px">{site.skills.map((s) => <span class="chip">{s}</span>)}</div>
 
-      <HairlineFigure name="branches" n={2} caption="The usual path, roughly." play class="" plateClass="" />
+      <HairlineFigure name="branches" n={4} caption="The usual path, roughly." play class="" plateClass="" />
     </div>
   </div>
 </Base>

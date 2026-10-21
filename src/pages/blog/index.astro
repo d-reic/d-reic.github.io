@@ -16,7 +16,7 @@ const tags = tagCounts(posts);
       <p>Essays, notes and the occasional half-finished thought. Newest first; there's also an <a href="/rss.xml">RSS feed</a>.</p>
       <div class="chips">{tags.map(([t, c]) => <a class="chip" href={`/tags/${t}/`}>{t}<small>{c}</small></a>)}</div>
     </div>
-    <HairlineFigure name="riffle" n={1} class="reveal reveal-2" label="A tray of cards; the one under the pointer stands up" />
+    <HairlineFigure name="report" n={1} play class="reveal reveal-2" label="A radiology report on a clipboard; the line under the pointer lifts its tagged entities" />
   </section>
 
   {years.map((y) => (

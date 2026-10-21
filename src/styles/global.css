@@ -20,8 +20,8 @@
   --text: 640px;
   --gutter: clamp(16px, 4vw, 40px);
 
-  /* hairline figures follow the page palette */
-  --hairline-plate: var(--surface);
+  /* hairline figures follow the page palette, their plates the page itself */
+  --hairline-plate: var(--bg);
   --hairline-hi: var(--ink);
   --hairline-edge: #9d968a;
   --hairline-mid: #c4bcad;
@@ -140,6 +140,8 @@ code { font-family: var(--mono); font-size: .86em; background: var(--code-bg); p
 /* ---------- Figures (hairline + portraits) ---------- */
 .fig { margin: 0; }
 .fig-plate { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; position: relative; overflow: hidden; }
+/* A drawing sits straight on the page, like the hero's: no card behind it. Photos keep theirs. */
+.fig-plate:has(> [data-hairline]) { background: none; border-color: transparent; }
 .fig figcaption { display: flex; gap: 10px; align-items: baseline; margin-top: 10px; font-family: var(--mono); font-size: .74rem; color: var(--muted); line-height: 1.4; min-height: 1.4em; }
 .fig figcaption b { color: var(--ink); font-weight: 500; white-space: nowrap; }
 .fig figcaption .live { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
