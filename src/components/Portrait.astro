@@ -1,7 +1,11 @@
 ---
-import { site, portraits } from "../site.config";
+import { existsSync } from "node:fs";
+import { site, portraits as planned, placeholderPortraits } from "../site.config";
 interface Props { n?: number | string; class?: string }
 const { n, class: cls } = Astro.props;
+// Only portraits that have actually been generated; placeholders until then.
+const ready = planned.filter((p) => existsSync(`public${p.src}`));
+const portraits = ready.length ? ready : placeholderPortraits;
 const first = portraits[0];
 ---
 <figure class:list={["fig portrait-fig", cls]} data-portraits={JSON.stringify(portraits)}>

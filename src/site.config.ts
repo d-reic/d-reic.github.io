@@ -40,7 +40,9 @@ export const site = {
   // Transparency note in the footer (adapted from sunelehmann.com). HTML allowed.
   aiDeclaration: `<b>AI declaration:</b> The posts are written by me, by hand; AI may proofread, but it
     doesn't write. The site itself was built with AI (Claude Code), and the portraits are AI-generated
-    from a photo of me. The moving line drawings are from <a href="https://hairline.lucasmarkes.com">hairline</a>.`,
+    from a photo of me. Kudos to <a href="https://sunelehmann.com">Sune Lehmann</a> for the idea of a
+    different me on every visit (and for this declaration). The moving line drawings are from
+    <a href="https://hairline.lucasmarkes.com">hairline</a>.`,
 
   nav: [
     { label: "Blog", href: "/blog/" },
@@ -70,10 +72,28 @@ export const site = {
   skills: ["LLMs", "Python", "Swift", "Firebase", "Docker", "Linux", "LaTeX"],
 };
 
-// The rotating AI portraits. One is picked at random on every visit and the
-// ↻ button cycles through the rest. Drop your images into /public/portraits
-// and list them here (see README for a prompt recipe).
+// The rotating AI portraits (idea: sunelehmann.com). One is picked at random on
+// every visit and the ↻ button cycles through the rest. Only entries whose file
+// exists in /public are shown; prompts for each one are in PORTRAITS.md, and
+// `npm run portraits <folder>` crops and resizes them into /public/portraits.
 export const portraits: { src: string; caption: string }[] = [
+  { src: "/portraits/original.jpg", caption: "the original, more or less" },
+  { src: "/portraits/radiologist.jpg", caption: "reading an X-ray" },
+  { src: "/portraits/athlete.jpg", caption: "mid-WOD" },
+  { src: "/portraits/harpist.jpg", caption: "as a concert harpist" },
+  { src: "/portraits/astronaut.jpg", caption: "as an astronaut" },
+  { src: "/portraits/alphorn.jpg", caption: "with an alphorn" },
+  { src: "/portraits/tracht.jpg", caption: "in Austrian Tracht" },
+  { src: "/portraits/viking.jpg", caption: "as a Viking" },
+  { src: "/portraits/beekeeper.jpg", caption: "as a beekeeper" },
+  { src: "/portraits/ski-instructor.jpg", caption: "as a ski instructor" },
+  { src: "/portraits/chef.jpg", caption: "as a chef" },
+  { src: "/portraits/professor-1920.jpg", caption: "as a 1920s professor" },
+  { src: "/portraits/hacker-1984.jpg", caption: "as a 1984 hacker" },
+];
+
+// Shown until at least one real portrait exists.
+export const placeholderPortraits: { src: string; caption: string }[] = [
   { src: "/portraits/astronaut.svg", caption: "as an astronaut" },
   { src: "/portraits/beekeeper.svg", caption: "as a beekeeper" },
   { src: "/portraits/cartographer.svg", caption: "as a cartographer" },

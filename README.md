@@ -41,15 +41,10 @@ Inline figure inside a post (plain HTML works in Markdown):
 
 ## AI portraits
 
-Generate a series from one good reference photo of yourself (ChatGPT / Gemini / Midjourney with
-character reference all work). Keep framing and lighting identical so the shuffle feels like a set:
-
-> Head-and-shoulders portrait of the person in the reference photo, dressed as **a beekeeper**.
-> Facing the camera, slight smile, centered, plain soft **pastel yellow** studio background,
-> soft diffused light, photorealistic, 4:5 portrait crop.
-
-Swap the costume and the background colour each time. Export at roughly 800×1000, save as
-`public/portraits/<name>.jpg`, and list each one in `portraits` in `src/site.config.ts`.
+The rotating portraits are an idea from [Sune Lehmann](https://sunelehmann.com).
+Prompts and the step-by-step recipe are in [PORTRAITS.md](PORTRAITS.md); `npm run portraits <folder>`
+crops and resizes the results. Only portraits whose file exists are shown, with the line-art
+placeholders as a fallback.
 
 ## Deploy
 
