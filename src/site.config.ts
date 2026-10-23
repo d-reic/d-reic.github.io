@@ -106,6 +106,7 @@ export const site = {
       { name: "Living Case II", role: "Semester projects", note: "" },
       { name: "User-Centered Design", role: "Selected units", note: "" },
       { name: "Clinical studies", role: "Selected units", note: "" },
+      { name: "ASU Research internship", role: "Teaching", note: "At the University of Bern." },
     ],
   },
   interests: ["Large language models in medicine", "Clinical NLP", "Data science", "Mobile app development"],
