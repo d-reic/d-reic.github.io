@@ -110,7 +110,10 @@ export const site = {
     ],
   },
   interests: ["Large language models in medicine", "Clinical NLP", "Data science", "Mobile app development"],
-  skills: ["LLMs", "Python", "Swift", "Firebase", "Docker", "Linux", "LaTeX"],
+  skills: [
+    "LLMs", "BERTopic", "Python", "Swift", "Android", "Firebase", "Docker", "Git", "Linux", "LaTeX",
+    "User-centered design", "Usability testing", "Qualitative research", "Project management", "Facilitation",
+  ],
 };
 
 // The rotating AI portraits (idea: sunelehmann.com). The first one always shows
