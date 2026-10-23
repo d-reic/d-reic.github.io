@@ -81,7 +81,7 @@
       const e = easter(y), day = 864e5;
       if (now >= new Date(e - 14 * day) && now < new Date(+e + 2 * day)) return "easter";
       if (md >= 1201 && md <= 1226) return "christmas";
-      if (md >= 1015 && md <= 1101) return "halloween";
+      if (md === 1031) return "halloween";
       if (md >= 320 && md <= 620) return "spring";
       if (md >= 621 && md <= 922) return "summer";
       if (md >= 923 && md <= 1130) return "autumn";
