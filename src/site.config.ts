@@ -88,6 +88,7 @@ export const site = {
   ],
   projects: [
     { name: "AMRAP: WOD Logs & PRs", note: "Native iOS app for box fitness athletes.", links: [{ label: "Website", href: "https://amrap-app.com" }, { label: "App Store", href: "https://apps.apple.com/ch/app/amrap-wod-log-prs/id6743651394" }] },
+    { name: "Gluscht", note: "Nutrition coaching app for iPhone and the web. Turns your coach's meal plan into a daily schedule. In pilot.", links: [{ label: "Website", href: "https://danielreichenpfader.com/gluscht/" }] },
     { name: "Der Harfenist", note: "Harp music for your event.", links: [{ label: "Website", href: "https://der-harfenist.ch" }] },
     { name: "Facilitation & Digital Experience Engineering", note: "About to start my own company. Stay tuned!", links: [] },
   ],
