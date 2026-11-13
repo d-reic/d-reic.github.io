@@ -101,9 +101,9 @@ export const site = {
       { name: "CAS KI – Grundlagen und Anwendung", where: "Continuing education, BFH School of Engineering and Computer Science" },
     ],
     modules: [
-      { name: "Clinical apps", role: "Module lead", note: "" },
-      { name: "Quality management in healthcare", role: "Module lead", note: "" },
-      { name: "Optimize your studies with genAI", role: "Module lead", note: "BFH-Diagonal elective. Selected as a “Good Practice Example Future Skills”." },
+      { name: "Clinical apps", role: "Course lead", note: "" },
+      { name: "Quality management in healthcare", role: "Course lead", note: "" },
+      { name: "Optimize your studies with genAI", role: "Course lead", note: "BFH-Diagonal elective. Selected as a “Good Practice Example Future Skills”." },
       { name: "Living Case II", role: "Semester projects", note: "" },
       { name: "User-Centered Design", role: "Selected units", note: "" },
       { name: "Clinical studies", role: "Selected units", note: "" },
