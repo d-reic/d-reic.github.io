@@ -107,6 +107,7 @@ export const site = {
       { name: "User-Centered Design", role: "Selected units", note: "" },
       { name: "Clinical studies", role: "Selected units", note: "" },
       { name: "ASU Research internship", role: "Teaching", note: "At the University of Bern." },
+      { name: "Effective prompting and AI interaction", role: "Teaching", note: "Module in the CAS KI – Grundlagen und Anwendung, continuing education at the BFH School of Engineering and Computer Science." },
     ],
   },
   interests: ["Large language models in medicine", "Clinical NLP", "Data science", "Mobile app development"],
