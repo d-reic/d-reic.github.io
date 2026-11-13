@@ -98,6 +98,7 @@ export const site = {
       { name: "BSc Medical Informatics", where: "BFH School of Engineering and Computer Science" },
       { name: "BFH-Diagonal", where: "Interdisciplinary electives open to all BFH students" },
       { name: "Digitalization and transformation in healthcare", where: "BFH School of Health Professions" },
+      { name: "CAS KI – Grundlagen und Anwendung", where: "Continuing education, BFH School of Engineering and Computer Science" },
     ],
     modules: [
       { name: "Clinical apps", role: "Module lead", note: "" },
@@ -107,7 +108,7 @@ export const site = {
       { name: "User-Centered Design", role: "Selected units", note: "" },
       { name: "Clinical studies", role: "Selected units", note: "" },
       { name: "ASU Research internship", role: "Teaching", note: "At the University of Bern." },
-      { name: "Effective prompting and AI interaction", role: "Teaching", note: "Module in the CAS KI – Grundlagen und Anwendung, continuing education at the BFH School of Engineering and Computer Science." },
+      { name: "Effective prompting and AI interaction", role: "Teaching", note: "In the CAS KI – Grundlagen und Anwendung." },
     ],
   },
   interests: ["Large language models in medicine", "Clinical NLP", "Data science", "Mobile app development"],
