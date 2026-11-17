@@ -11,7 +11,7 @@ const hasPosts = readdirSync("src/content/blog").some((f) => f.endsWith(".md"));
 export default defineConfig({
   site: "https://danielreichenpfader.com",
   integrations: [sitemap({ filter: (page) => (hasPosts || !page.endsWith("/blog/")) && !page.endsWith("/resources/") })],
-  // Old URL of the resource page, already shared with the CAS KI class.
+  // Old URL of the resource page, already shared.
   redirects: { "/teaching/cas-ki-ressourcen/": "/resources/" },
   markdown: {
     shikiConfig: {
