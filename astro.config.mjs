@@ -10,7 +10,9 @@ const hasPosts = readdirSync("src/content/blog").some((f) => f.endsWith(".md"));
 // For a GitHub Pages project site (user.github.io/repo) also set `base: "/repo"`.
 export default defineConfig({
   site: "https://danielreichenpfader.com",
-  integrations: [sitemap({ filter: (page) => (hasPosts || !page.endsWith("/blog/")) && !page.includes("/teaching/cas-ki-ressourcen/") })],
+  integrations: [sitemap({ filter: (page) => (hasPosts || !page.endsWith("/blog/")) && !page.endsWith("/resources/") })],
+  // Old URL of the resource page, already shared with the CAS KI class.
+  redirects: { "/teaching/cas-ki-ressourcen/": "/resources/" },
   markdown: {
     shikiConfig: {
       themes: { light: "github-light", dark: "github-dark-dimmed" },

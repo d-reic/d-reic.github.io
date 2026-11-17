@@ -126,7 +126,7 @@ code { font-family: var(--mono); font-size: .86em; background: var(--code-bg); p
 @media (max-width: 600px) {
   .site-header .bar { flex-wrap: wrap; gap: 6px 12px; min-height: 0; padding: 12px 0 10px; }
   .brand, .brand-h1 { flex: 1 0 100%; }
-  .nav { margin-left: 0; width: 100%; gap: 16px; }
+  .nav { margin-left: 0; width: 100%; flex-wrap: wrap; gap: 8px 14px; }
   .nav .theme-toggle { margin-left: auto; }
 }
 

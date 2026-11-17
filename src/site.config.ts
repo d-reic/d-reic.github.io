@@ -67,6 +67,7 @@ export const site = {
   nav: [
     { label: "Research", href: "/research/" },
     { label: "Teaching", href: "/teaching/" },
+    { label: "Resources", href: "/resources/" },
     { label: "Blog", href: "/blog/" },
     { label: "About", href: "/about/" },
   ],
