@@ -1,0 +1,157 @@
+---
+import Base from "../../layouts/Base.astro";
+import HairlineFigure from "../../components/HairlineFigure.astro";
+
+// Prompts und KI-Werkzeuge zum Ausprobieren, CAS KI – Grundlagen und Anwendung, Block 2.
+// Only links and own short descriptions; the prompt texts stay with their authors.
+type Item = { title: string; text: string; href: string; source: string; level: "Einstieg" | "Mittel" | "Fortgeschritten" };
+
+const prompts: Item[] = [
+  {
+    title: "Pyramid Principle: vier Prompts für E-Mails",
+    text: "Antwort zuerst, Einstieg nach SCQA, MECE-Check der Argumente und ein «Executive Test» vor dem Senden.",
+    href: "https://x.com/heynavtoor/status/2080238307813040398",
+    source: "Nav Toor auf X",
+    level: "Einstieg",
+  },
+  {
+    title: "Der «brutal ehrliche Berater»",
+    text: "Ein Rollen-Prompt gegen zu viel Zustimmung. Bringt er bessere Kritik oder nur einen härteren Ton?",
+    href: "https://www.instagram.com/p/DdZFTOTAIhj/",
+    source: "Evolving AI auf Instagram",
+    level: "Einstieg",
+  },
+  {
+    title: "Prompt-Formel von Greg Brockman",
+    text: "Vier Bausteine für Aufträge an KI-Agenten. Im Hype-Check: Was ist neu gegenüber einem guten Briefing? Stimmt die Zuschreibung?",
+    href: "https://www.instagram.com/p/Dd6xT5QCRQd/",
+    source: "artificialintelligence.co auf Instagram",
+    level: "Mittel",
+  },
+  {
+    title: "Sieben Symbole für einen Brief",
+    text: "Überschriften, Regeln und Lücken mit einfachen Zeichen markieren. Zum Vergleich mit dem eigenen Briefing-Canvas.",
+    href: "https://www.instagram.com/p/Deb223KFbZo/",
+    source: "Quentin auf Instagram",
+    level: "Mittel",
+  },
+  {
+    title: "Präsentationen nach Patrick Winston",
+    text: "Prompts, die den Präsentationsansatz des MIT-Professors auf eigene Folien anwenden.",
+    href: "https://www.instagram.com/p/DWv7OK1khYq/",
+    source: "God of Prompt auf Instagram",
+    level: "Mittel",
+  },
+  {
+    title: "Heilmeier Extractor",
+    text: "Ein Prompt, der Fachtexte entlang des Heilmeier-Katalogs der DARPA zusammenfasst, mit Verweisen auf die Abschnitte und einer Prüfung auf versteckte Anweisungen. Der Prompt steht in den Kommentaren.",
+    href: "https://www.linkedin.com/posts/prof-todd-austin_ai-aitools-research-share-7405033853662343168-MZPH/",
+    source: "Todd Austin auf LinkedIn",
+    level: "Mittel",
+  },
+];
+
+const tools: Item[] = [
+  {
+    title: "NotebookLM und weitere Google-KI-Werkzeuge",
+    text: "Eine Übersicht über Googles KI-Werkzeuge. Zum Ausprobieren: NotebookLM als Einarbeitungs-Tool mit Briefing-Dokument und Quiz.",
+    href: "https://www.instagram.com/p/DdoSzpEkkfv/",
+    source: "Ankit Dungawat auf Instagram",
+    level: "Einstieg",
+  },
+  {
+    title: "NotebookLM-Prompts zur Vorbereitung",
+    text: "Drei Prompts, die Recherche, Briefing-Dokument und Quiz in NotebookLM verbinden. Lassen sich auf die Einarbeitung neuer Mitarbeitender übertragen.",
+    href: "https://www.instagram.com/reels/DdwohTTIcZj/",
+    source: "Frank Andrade auf Instagram",
+    level: "Einstieg",
+  },
+  {
+    title: "Claude Setup Kit",
+    text: "Einstellungen, Prompts und neue Formate der Claude-App. Für den Kurs relevant: der Abschnitt zu Docs, Slides, Design, Dashboard und Motion.",
+    href: "https://www.futurepedia.io/resources/claude-setup-kit/view",
+    source: "Futurepedia",
+    level: "Einstieg",
+  },
+  {
+    title: "Claude Whiteboards",
+    text: "Pläne und Retros als gemeinsames Whiteboard, das Claude gliedert und in ein Dokument oder eine Präsentation umwandelt.",
+    href: "https://www.instagram.com/p/Dfm9AZfDO9G/",
+    source: "bestapps.ai auf Instagram",
+    level: "Einstieg",
+  },
+  {
+    title: "Lernen mit KI verstehen",
+    text: "Workshop-Material der Virtuellen Akademie der BFH zum Unterschied zwischen Performanz und Lernen und zu KI als tutorieller Unterstützung.",
+    href: "https://virtuelleakademie.github.io/lernen-mit-ki-verstehen/",
+    source: "BFH Virtuelle Akademie",
+    level: "Mittel",
+  },
+  {
+    title: "La Forge du Tuteur IA",
+    text: "Werkzeug der Universität Lausanne zum Bauen eigener KI-Tutoren.",
+    href: "https://ia.unil.ch/forge-tuteur/",
+    source: "Université de Lausanne",
+    level: "Mittel",
+  },
+  {
+    title: "SkillSpector",
+    text: "Sicherheits-Scanner für Agent Skills. Die README fasst eine Studie zusammen, nach der rund ein Viertel der untersuchten Skills Schwachstellen enthält. Gut als Checkliste, bevor man fremde Skills installiert.",
+    href: "https://github.com/nvidia/skillspector",
+    source: "NVIDIA auf GitHub",
+    level: "Fortgeschritten",
+  },
+  {
+    title: "LLM-Wiki",
+    text: "Eine Ideendatei: Ein Sprachmodell baut aus Quellen ein wachsendes, verlinktes Wiki, statt bei jeder Frage neu zu suchen.",
+    href: "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
+    source: "Andrej Karpathy auf GitHub",
+    level: "Fortgeschritten",
+  },
+];
+
+const groups = [
+  { title: "Prompts", items: prompts },
+  { title: "Werkzeuge und Ressourcen", items: tools },
+];
+---
+<Base
+  title="Prompts und KI-Werkzeuge · CAS KI"
+  description="Ausgewählte Prompts und KI-Werkzeuge zum Ausprobieren, zusammengestellt für den CAS KI – Grundlagen und Anwendung an der BFH."
+  noindex
+>
+  <div lang="de">
+    <section class="page-head">
+      <div class="reveal">
+        <div class="eyebrow">CAS KI – Grundlagen und Anwendung · Block 2</div>
+        <h1>Prompts und KI-Werkzeuge</h1>
+        <p>Eine Auswahl zum Ausprobieren. Teste sie und urteile selbst: nützlich oder Hype? Viele Prompt-Formeln aus Social Media sind gute Briefing-Prinzipien in neuer Verpackung. Prüfe darum auch die Quelle.</p>
+      </div>
+      <HairlineFigure name="loupe" n={1} play class="reveal reveal-2" label="A stand loupe on a ruled sheet" />
+    </section>
+
+    {groups.map((g) => (
+      <section>
+        <div class="section-title"><h2>{g.title}</h2><span class="line"></span></div>
+        <div class="cards">
+          {g.items.map((it) => (
+            <a class="card" href={it.href} rel="noopener">
+              <h3>{it.title}</h3>
+              <p>{it.text}</p>
+              <span class="mono">{it.level} · {it.source}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <section>
+      <div class="section-title"><h2>Beim Testen</h2><span class="line"></span></div>
+      <ul class="timeline">
+        <li><span class="mono">1</span><div><div class="w">Keine echten Daten</div><div class="note">Teste mit dem Falldossier aus dem Kurs, nicht mit Kunden- oder Personendaten.</div></div></li>
+        <li><span class="mono">2</span><div><div class="w">Ergebnis prüfen</div><div class="note">Stimmen Zahlen, Regeln und Quellen? Was ist neu gegenüber einem guten Briefing?</div></div></li>
+        <li><span class="mono">3</span><div><div class="w">Urteil festhalten</div><div class="note">Daumen hoch oder runter, eine Erkenntnis, und wo du es bei deiner Arbeit einsetzen würdest.</div></div></li>
+      </ul>
+    </section>
+  </div>
+</Base>
