@@ -14,7 +14,7 @@ const blog = defineCollection({
     cover: z.string().optional(),
     coverCaption: z.string().optional(),
     // … or a hairline figure: one of the package's 33 (e.g. "terrain", "branches")
-    // or a custom one in src/figures/ (e.g. "lightbox").
+    // or a custom one in src/figures/ (e.g. "report").
     figure: z.string().optional(),
     featured: z.boolean().default(false),
     draft: z.boolean().default(false),

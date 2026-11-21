@@ -16,6 +16,25 @@ const types: Record<string, string> = {
   "data-set": "Dataset",
 };
 const years = [...new Set(research.works.map((w) => w.year))];
+const yearId = (y: number | null) => `y${y ?? "undated"}`;
+
+// Bylines as "D. Reichenpfader": initials, then the surname.
+const short = (name: string) => {
+  const parts = name.trim().split(/\s+/);
+  const last = parts.pop() ?? name;
+  return [...parts.map((p) => p[0] + "."), last].join(" ");
+};
+// Long author lists keep the first three, me, and the last author (often the PI).
+type Work = (typeof research.works)[number];
+const byline = (w: Work) => {
+  const a = w.authors ?? [];
+  if (!a.length) return [];
+  const keep = a.length <= 6 ? a.map((_, i) => i) : [...new Set([0, 1, 2, w.me ?? 0, a.length - 1])].sort((x, y) => x - y);
+  const out: { name: string; me: boolean; gap: boolean }[] = [];
+  keep.forEach((i, k) => out.push({ name: short(a[i]), me: i === w.me, gap: k > 0 && i - keep[k - 1] > 1 }));
+  return out;
+};
+const role = (w: Work) => (w.me === 0 ? "First author" : w.authors && w.me === w.authors.length - 1 && w.authors.length > 1 ? "Last author" : null);
 const selected = site.selectedPublications
   .map((doi) => research.works.find((w) => w.doi === doi.toLowerCase()))
   .filter((w) => w !== undefined);
@@ -23,16 +42,17 @@ const selected = site.selectedPublications
 <Base title="Research & Publications" description="Publications and citations of Daniel Reichenpfader on clinical NLP, LLMs for radiology reports, information extraction and digital health, updated daily." jsonLd={publicationList(research.works)}>
   <section class="page-head">
     <div class="reveal">
-      <div class="eyebrow">Clinical NLP · LLMs in medicine · digital health</div>
+      <div class="eyebrow">Clinical NLP, LLMs in medicine, digital health</div>
       <h1>Research</h1>
       <p>Natural language processing for radiology and clinical text, large language models in medicine, and digital health applications. The list below comes straight from my <a href={`https://orcid.org/${research.orcid}`}>ORCID</a> record; citation counts are from OpenAlex, so they run lower than on my <a href={scholar}>Google Scholar</a> profile.</p>
     </div>
     <HairlineFigure
-      name="lightbox"
+      name="report"
       n={1}
+      caption="Tagging a clinical report."
       play
       class="reveal reveal-2"
-      label="A lightbox with three x-rays; the film under the pointer swings out to be read"
+      label="A clinical report with its entities tagged; the line under the pointer lifts its findings off the page"
     />
   </section>
 
@@ -42,9 +62,9 @@ const selected = site.selectedPublications
       <div class="cards selected">
         {selected.map((w) => (
           <a class="card" href={w.url}>
-            <span class="eyebrow">{[w.venue, w.year].filter(Boolean).join(" · ")}</span>
+            <span class="eyebrow">{[w.venue, w.year].filter(Boolean).join(", ")}</span>
             <h3>{w.title}</h3>
-            {w.citations != null && <span class="mono">{w.citations} citations</span>}
+            <span class="mono">{[w.citations != null && `${w.citations} citations`, role(w)].filter(Boolean).join(" · ")}</span>
           </a>
         ))}
       </div>
@@ -72,7 +92,7 @@ const selected = site.selectedPublications
             <span class="mono">{t.when}</span>
             <div>
               <div class="w">{t.href ? <a href={t.href}>{t.title}</a> : t.title}</div>
-              <div class="note">{[t.kind, t.event].join(" · ")}</div>
+              <div class="note">{[t.kind, t.event].join(", ")}</div>
               {t.note && <div class="note">{t.note}</div>}
             </div>
           </li>
@@ -83,15 +103,26 @@ const selected = site.selectedPublications
 
   <section>
     <div class="section-title"><h2>Publications</h2><span class="line"></span></div>
+    <nav class="year-jump" aria-label="Jump to year">
+      {years.map((y) => (
+        <a href={`#${yearId(y)}`}>{y ?? "Undated"}<small>{research.works.filter((w) => w.year === y).length}</small></a>
+      ))}
+    </nav>
     {years.map((y) => (
       <>
-        <h3 class="year">{y ?? "Undated"}</h3>
+        <h3 class="year" id={yearId(y)}>{y ?? "Undated"}</h3>
         <ol class="pubs">
           {research.works.filter((w) => w.year === y).map((w) => (
             <li>
               <div>
                 {w.url ? <a class="t" href={w.url}>{w.title}</a> : <span class="t">{w.title}</span>}
-                <div class="meta">{[types[w.type] ?? w.type, w.venue].filter(Boolean).join(" · ")}</div>
+                {w.authors && (
+                  <div class="byline">
+                    {byline(w).map((a, i) => <>{i > 0 && (a.gap ? ", …, " : ", ")}{a.me ? <b>{a.name}</b> : <span>{a.name}</span>}</>)}
+                    {w.authors.length > 6 && <span class="count"> ({w.authors.length} authors)</span>}
+                  </div>
+                )}
+                <div class="meta">{[types[w.type] ?? w.type, w.venue].filter(Boolean).join(", ")}</div>
               </div>
               <div class="n">{w.citations != null && <><b>{w.citations}</b>{w.citations === 1 ? "citation" : "citations"}</>}</div>
             </li>

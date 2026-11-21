@@ -9,15 +9,15 @@ export const site = {
   seoTitle: "Daniel Reichenpfader · Clinical NLP & AI in Healthcare",
   description:
     "Daniel Reichenpfader is a tenure-track lecturer at Bern University of Applied Sciences (BFH), researching clinical NLP and large language models in healthcare.",
-  role: "Tenure-track Lecturer · Bern University of Applied Sciences",
+  role: "Tenure-track lecturer at Bern University of Applied Sciences",
   location: "Switzerland",
 
   // Home page intro. Plain HTML is allowed.
   bio: [
-    `Hej! Salü! Servus! I'm Daniel, a researcher, app developer and project manager with a focus on
+    `<span class="hello"><span>Hej!<small>Swedish</small></span> <span>Salü!<small>Swiss German</small></span> <span>Servus!<small>Austrian</small></span></span> I'm Daniel, a researcher, lecturer, app developer and facilitator with a focus on
      eHealth and well-being.`,
-    `I'm a tenure-track lecturer at <a href="https://www.bfh.ch">Bern University of Applied Sciences</a>
-     and about to finish my PhD at the Université de Genève on natural language processing in
+    `I teach at <a href="https://www.bfh.ch">Bern University of Applied Sciences</a>
+     and am about to finish my PhD at the Université de Genève on natural language processing in
      radiology. More broadly, I'm trying to make healthcare more accessible and efficient with AI and NLP.`,
   ],
 
@@ -74,18 +74,18 @@ export const site = {
 
   // About page: karpathy.ai-style timelines. Newest first.
   experience: [
-    { when: "2026 — now", what: "Tenure-track Lecturer", where: "Bern University of Applied Sciences", note: "" },
+    { when: "2026–now", what: "Tenure-track Lecturer", where: "Bern University of Applied Sciences", note: "" },
     { when: "2025", what: "HORIZON Europe Expert", where: "European Commission", note: "Evaluating project proposals for the HORIZON Europe programme." },
-    { when: "2022 — 2026", what: "Research Associate", where: "Bern University of Applied Sciences", note: "Research projects on clinical NLP, conversational agents and AI-based tools for higher education." },
-    { when: "2020 — 2022", what: "R&D Assistant", where: "Solgenium", note: "Android development, stakeholder analyses and research proposals." },
-    { when: "2018 — 2019", what: "Student Trainee", where: "AVL List", note: "Maintaining and assembling hard- and software, company- and worldwide." },
+    { when: "2022–2026", what: "Research Associate", where: "Bern University of Applied Sciences", note: "Research projects on clinical NLP, conversational agents and AI-based tools for higher education." },
+    { when: "2020–2022", what: "R&D Assistant", where: "Solgenium", note: "Android development, stakeholder analyses and research proposals." },
+    { when: "2018–2019", what: "Student Trainee", where: "AVL List", note: "Maintaining and assembling hard- and software, company- and worldwide." },
   ],
   education: [
-    { when: "2023 — 2026", what: "PhD in Life Sciences", where: "Université de Genève", note: "Natural language processing in radiology. Nearly done." },
-    { when: "2020 — 2022", what: "MSc Information Management", where: "FH JOANNEUM, Austria", note: "Specialisation in software and digital experience engineering." },
-    { when: "2021 — 2022", what: "Exchange semester", where: "Jönköping University, Sweden", note: "Mobile development, iOS, semantic web technologies." },
-    { when: "2017 — 2020", what: "BSc Medical Informatics", where: "FH JOANNEUM, Austria", note: "Specialisation in digital personal assistance systems." },
-    { when: "2019 — 2020", what: "Exchange semester", where: "Bern University of Applied Sciences", note: "Usability testing, augmented reality, medical data integration." },
+    { when: "2023–2026", what: "PhD in Life Sciences", where: "Université de Genève", note: "Natural language processing in radiology. Nearly done." },
+    { when: "2020–2022", what: "MSc Information Management", where: "FH JOANNEUM, Austria", note: "Specialisation in software and digital experience engineering." },
+    { when: "2021–2022", what: "Exchange semester", where: "Jönköping University, Sweden", note: "Mobile development, iOS, semantic web technologies." },
+    { when: "2017–2020", what: "BSc Medical Informatics", where: "FH JOANNEUM, Austria", note: "Specialisation in digital personal assistance systems." },
+    { when: "2019–2020", what: "Exchange semester", where: "Bern University of Applied Sciences", note: "Usability testing, augmented reality, medical data integration." },
   ],
   projects: [
     { name: "AMRAP: WOD Logs & PRs", note: "Native iOS app for box fitness athletes.", links: [{ label: "Website", href: "https://amrap-app.com" }, { label: "App Store", href: "https://apps.apple.com/ch/app/amrap-wod-log-prs/id6743651394" }] },
@@ -98,20 +98,18 @@ export const site = {
   teaching: {
     profile: "https://www.bfh.ch/en/about-bfh/people/dsgj475q4xyr/",
     programmes: [
-      { name: "BSc Medical Informatics", where: "BFH School of Engineering and Computer Science" },
-      { name: "BFH-Diagonal", where: "Interdisciplinary electives open to all BFH students" },
-      { name: "Digitalization and transformation in healthcare", where: "BFH School of Health Professions" },
-      { name: "CAS KI – Grundlagen und Anwendung", where: "Continuing education, BFH School of Engineering and Computer Science" },
+      { name: "BSc Medical Informatics", href: "https://www.bfh.ch/en/studies/bachelor/medical-informatics/", where: "BFH School of Engineering and Computer Science" },
+      { name: "BFH-Diagonal", href: "https://www.bfh.ch/en/studies/additional-certificates/bfh-diagonal/", where: "Interdisciplinary electives open to all BFH students" },
+      { name: "Digitalization and transformation in healthcare", href: "https://www.bfh.ch/de/weiterbildung/fachkurse-sas/digitalisierung-und-transformation-im-gesundheitswesen/", where: "BFH School of Health Professions" },
+      { name: "CAS KI – Grundlagen und Anwendung", href: "https://www.bfh.ch/de/weiterbildung/cas/kuenstliche-intelligenz-grundlagen-und-anwendung/", where: "Continuing education, BFH School of Engineering and Computer Science" },
     ],
     modules: [
-      { name: "Clinical apps", role: "Course lead", note: "" },
-      { name: "Quality management in healthcare", role: "Course lead", note: "" },
-      { name: "Optimize your studies with genAI", role: "Course lead", note: "BFH-Diagonal elective. Selected as a “Good Practice Example Future Skills”." },
-      { name: "Living Case II", role: "Semester projects", note: "" },
-      { name: "User-Centered Design", role: "Selected units", note: "" },
-      { name: "Clinical studies", role: "Selected units", note: "" },
-      { name: "ASU Research internship", role: "Teaching", note: "At the University of Bern." },
-      { name: "Effective prompting and AI interaction", role: "Teaching", note: "In the CAS KI – Grundlagen und Anwendung." },
+      { name: "Clinical apps", subtitle: "Designing and building mobile apps for clinical use.", role: "Course lead", note: "" },
+      { name: "Quality management in healthcare", subtitle: "Quality frameworks, processes and measurement in healthcare organisations.", role: "Course lead", note: "" },
+      { name: "Optimize your studies with genAI", subtitle: "Using generative AI for learning, writing and research, responsibly.", role: "Course lead", note: "" },
+      { name: "User-Centered Design", subtitle: "Designing health software with and for the people who use it.", role: "Course lead", note: "" },
+      { name: "ASU Research internship", subtitle: "Guiding students through a research project of their own.", role: "Teaching", note: "" },
+      { name: "Effective prompting and AI interaction", subtitle: "Writing prompts that get reliable results from language models.", role: "Teaching", note: "" },
     ],
   },
   interests: ["Large language models in medicine", "Clinical NLP", "Data science", "Mobile app development"],

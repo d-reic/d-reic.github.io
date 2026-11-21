@@ -46,7 +46,7 @@ async function main() {
   for (let i = 0; i < dois.length; i += 50) {
     const chunk = dois.slice(i, i + 50).map((d) => `https://doi.org/${d}`).join("|");
     const page = await getJSON(
-      `https://api.openalex.org/works?per-page=100&select=doi,cited_by_count,counts_by_year,primary_location&filter=doi:${encodeURIComponent(chunk)}`,
+      `https://api.openalex.org/works?per-page=100&select=doi,cited_by_count,counts_by_year,primary_location,authorships&filter=doi:${encodeURIComponent(chunk)}`,
     );
     for (const r of page.results) cites.set(r.doi.replace("https://doi.org/", "").toLowerCase(), r);
   }
@@ -56,6 +56,12 @@ async function main() {
     const r = w.doi && cites.get(w.doi);
     w.citations = r ? r.cited_by_count : null;
     w.venue ??= r?.primary_location?.source?.display_name ?? null;
+    // Authors in byline order, with which one is me (matched by ORCID), so the
+    // page can show who led the work.
+    const authors = r?.authorships ?? [];
+    w.authors = authors.length ? authors.map((a) => a.author?.display_name ?? "Unknown") : null;
+    const me = authors.findIndex((a) => a.author?.orcid?.endsWith(ORCID));
+    w.me = me >= 0 ? me : null;
     // Citations of a preprint still count towards the totals, even when it is hidden from the list.
     for (const c of r?.counts_by_year ?? []) byYear[c.year] = (byYear[c.year] ?? 0) + c.cited_by_count;
   }

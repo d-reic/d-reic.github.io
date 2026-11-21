@@ -1,10 +1,10 @@
 ---
 import Base from "../layouts/Base.astro";
-import HairlineFigure from "../components/HairlineFigure.astro";
 
 // Prompts and AI tools worth trying.
 // Only links and own short descriptions; the prompt texts stay with their authors.
-type Item = { title: string; text: string; href: string; source: string; level: "Beginner" | "Intermediate" | "Advanced" };
+// `note` is my own comment on a source (outdated, misattributed, ...), shown on the card.
+type Item = { title: string; text: string; href: string; source: string; level: "Beginner" | "Intermediate" | "Advanced"; note?: string };
 
 const prompts: Item[] = [
   {
@@ -27,6 +27,7 @@ const prompts: Item[] = [
     href: "https://www.instagram.com/p/Dd6xT5QCRQd/",
     source: "artificialintelligence.co on Instagram",
     level: "Intermediate",
+    note: "Brockman's original post is about prompting OpenAI's o1 model, so it is outdated.",
   },
   {
     title: "Seven symbols for a brief",
@@ -110,6 +111,8 @@ const tools: Item[] = [
   },
 ];
 
+const levels = { Beginner: 1, Intermediate: 2, Advanced: 3 } as const;
+
 const groups = [
   { title: "Prompts", items: prompts },
   { title: "Tools and resources", items: tools },
@@ -122,11 +125,9 @@ const groups = [
 >
   <section class="page-head">
     <div class="reveal">
-      <div class="eyebrow">Resources</div>
       <h1>Prompts and AI tools</h1>
       <p>A selection worth trying. Test them and judge for yourself: useful or hype? Many prompt formulas from social media are good briefing principles in new packaging, so check the source too.</p>
     </div>
-    <HairlineFigure name="loupe" n={1} play class="reveal reveal-2" label="A stand loupe on a ruled sheet" />
   </section>
 
   {groups.map((g) => (
@@ -137,7 +138,11 @@ const groups = [
           <a class="card" href={it.href} rel="noopener">
             <h3>{it.title}</h3>
             <p>{it.text}</p>
-            <span class="mono">{it.level} · {it.source}</span>
+            {it.note && <p class="comment"><b>Note:</b> {it.note}</p>}
+            <span class="mono">
+              <span class="level" data-level={levels[it.level]}><span class="ticks" aria-hidden="true"><i></i><i></i><i></i></span>{it.level}</span>
+              <span class="src">{it.source}</span>
+            </span>
           </a>
         ))}
       </div>

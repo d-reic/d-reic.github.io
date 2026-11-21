@@ -13,7 +13,7 @@ const { posts, short = false } = Astro.props;
           <span class="t">{p.data.title}</span>
           <span class="d">{p.data.description}</span>
         </span>
-        <span class="tags mono">{p.data.tags.slice(0, 2).join(" · ")}</span>
+        <span class="tags mono">{p.data.tags.slice(0, 2).join(", ")}</span>
       </a>
     </li>
   ))}

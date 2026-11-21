@@ -1,6 +1,5 @@
 ---
 import Base from "../layouts/Base.astro";
-import HairlineFigure from "../components/HairlineFigure.astro";
 import { site } from "../site.config";
 
 const { teaching } = site;
@@ -8,11 +7,10 @@ const { teaching } = site;
 <Base title="Teaching" description="Courses Daniel Reichenpfader teaches at Bern University of Applied Sciences (BFH) and the University of Bern: clinical apps, quality management in healthcare, studying with genAI and research internships.">
   <section class="page-head">
     <div class="reveal">
-      <div class="eyebrow">Bern University of Applied Sciences · University of Bern</div>
+      <div class="eyebrow">Bern University of Applied Sciences and University of Bern</div>
       <h1>Teaching</h1>
       <p>I teach clinical apps, quality management and the practical use of generative AI, mostly in the BSc Medical Informatics in Biel. Current details are on my <a href={teaching.profile}>BFH profile</a>.</p>
     </div>
-    <HairlineFigure name="loupe" n={1} play class="reveal reveal-2" label="A stand loupe on a ruled sheet; the rules pass enlarged under the glass" />
   </section>
 
   <section>
@@ -23,6 +21,7 @@ const { teaching } = site;
           <span class="mono">{m.role}</span>
           <div>
             <div class="w">{m.name}</div>
+            {m.subtitle && <div class="sub">{m.subtitle}</div>}
             {m.note && <div class="note">{m.note}</div>}
           </div>
         </li>
@@ -32,12 +31,11 @@ const { teaching } = site;
 
   <section>
     <div class="section-title"><h2>Programmes</h2><span class="line"></span></div>
-    <ul class="timeline">
+    <ul class="timeline single">
       {teaching.programmes.map((p) => (
         <li>
-          <span class="mono">Programme</span>
           <div>
-            <div class="w">{p.name}</div>
+            <div class="w">{p.href ? <a href={p.href}>{p.name}</a> : p.name}</div>
             <div class="note">{p.where}</div>
           </div>
         </li>

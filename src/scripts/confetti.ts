@@ -2,9 +2,9 @@
 // A small canvas animation, no library. Under prefers-reduced-motion only the
 // note appears.
 const CODE = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
-const COLORS = ["#1f3f7a", "#2a5299", "#5d8ad8", "#8ab0f0", "#d9a441", "#1d1c1a"];
+const COLORS = ["#b3262c", "#f0837a", "#2b5578", "#7fa6cc", "#17212b", "#a9b4ba"];
 
-console.log("%cPsst: ↑ ↑ ↓ ↓ ← → ← → B A", "font: 14px monospace; color: #2a5299");
+console.log("%cPsst: ↑ ↑ ↓ ↓ ← → ← → B A", "font: 14px monospace; color: #b3262c");
 
 // The last keys pressed; matching against the tail forgives stray keys before
 // the code (e.g. a third ↑).

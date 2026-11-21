@@ -36,7 +36,7 @@ const summary = `Citations per year: ${years.map((d) => `${d.year}: ${d.citation
           <div class:list={["bar", { partial: d.year === thisYear }]} style={`height:${(d.citations / top) * 100}%`}>
             {d === last && <b class="val">{d.citations}</b>}
           </div>
-          <span class="tip" aria-hidden="true">{d.year} · {d.citations} citations{d.year === thisYear && " so far"}</span>
+          <span class="tip" aria-hidden="true">{d.year}: {d.citations} citations{d.year === thisYear && " so far"}</span>
           <span class="yr" aria-hidden="true">{compact ? `’${String(d.year).slice(2)}` : d.year}</span>
         </div>
       ))}

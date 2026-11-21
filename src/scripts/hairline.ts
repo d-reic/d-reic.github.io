@@ -55,7 +55,7 @@ function mount(el: HTMLElement) {
     intensity: el.dataset.intensity ? Number(el.dataset.intensity) : undefined,
     play: el.dataset.play === "true",
     label: el.dataset.label || undefined,
-    onRead: live ? (text) => (live.textContent = text) : undefined,
+    onRead: live ? (text) => (live.textContent = text === "rest" ? "" : text) : undefined,
   };
   const fn = figures[name];
   if (typeof fn === "function") fn(el, opts);

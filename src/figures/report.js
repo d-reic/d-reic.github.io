@@ -1,5 +1,5 @@
 /**
- * Report: a radiology report on a clipboard, its words as tiles. The tagged
+ * Report: a clinical report on a clipboard, its words as tiles. The tagged
  * entities, a finding, a location, a size, stand proud of the page. The
  * pointer reads a line: its entities lift, staggered out from the pointer,
  * the rest settle into the page, and the one nearest takes the bright edge.
@@ -112,7 +112,7 @@ function mount({ stage, svg, read }, value) {
 
 hairline({
   name: "report",
-  means: "A radiology report with its entities tagged: the line under the pointer lifts its findings, sizes and locations off the page.",
+  means: "A clinical report with its entities tagged: the line under the pointer lifts its findings, sizes and locations off the page.",
   rules: [1, 2, 4, 5],
   range: [9, 16, 23],
   tour: [[175, 125], [215, 165], [195, 205], null],

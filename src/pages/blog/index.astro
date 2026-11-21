@@ -1,6 +1,5 @@
 ---
 import Base from "../../layouts/Base.astro";
-import HairlineFigure from "../../components/HairlineFigure.astro";
 import PostList from "../../components/PostList.astro";
 import { getPosts, tagCounts } from "../../lib/posts";
 
@@ -16,7 +15,6 @@ const tags = tagCounts(posts);
       <p>Essays, notes and the occasional half-finished thought. Newest first; there's also an <a href="/rss.xml">RSS feed</a>.</p>
       <div class="chips">{tags.map(([t, c]) => <a class="chip" href={`/tags/${t}/`}>{t}<small>{c}</small></a>)}</div>
     </div>
-    <HairlineFigure name="report" n={1} play class="reveal reveal-2" label="A radiology report on a clipboard; the line under the pointer lifts its tagged entities" />
   </section>
 
   {posts.length === 0 && (

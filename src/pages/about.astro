@@ -13,7 +13,7 @@ import { profilePage } from "../lib/schema";
         <dt>Currently</dt><dd>{site.role}</dd>
         <dt>Based in</dt><dd>{site.location}</dd>
         <dt>Interests</dt><dd>{site.interests.join(", ")}</dd>
-        <dt>Elsewhere</dt><dd>{site.links.map((l, i) => <>{i > 0 && " · "}<a href={l.href}>{l.label}</a></>)}</dd>
+        <dt>Elsewhere</dt><dd class="elsewhere">{site.links.map((l) => <a href={l.href}>{l.label}</a>)}</dd>
       </dl>
     </aside>
 
@@ -32,7 +32,7 @@ import { profilePage } from "../lib/schema";
               <li>
                 <span class="mono">{t.when}</span>
                 <div>
-                  <div class="w">{t.what} <span class="where">· {t.where}</span></div>
+                  <div class="w">{t.what} <span class="where">{t.where}</span></div>
                   {t.note && <div class="note">{t.note}</div>}
                 </div>
               </li>
@@ -45,7 +45,7 @@ import { profilePage } from "../lib/schema";
       <ul class="timeline">
         {site.projects.map((p) => (
           <li>
-            <span class="mono">{p.links.map((l, i) => <>{i > 0 && " · "}<a href={l.href}>{l.label}</a></>)}</span>
+            <span class="mono links">{p.links.map((l) => <a href={l.href}>{l.label}</a>)}</span>
             <div>
               <div class="w">{p.name}</div>
               <div class="note">{p.note}</div>

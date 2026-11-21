@@ -12,6 +12,24 @@ const posts = await getPosts();
 const latest = posts[0];
 const featured = posts.find((p) => p.data.featured && p !== latest) ?? posts[1];
 const archive = posts.length > 2 ? posts[posts.length - 1] : undefined;
+// Home's second act: the work beyond research, one ruled line each.
+const project = (name: string) => site.projects.find((p) => p.name.startsWith(name));
+const beyond = [
+  { kind: "Teaching", title: "Courses at BFH", href: "/teaching/",
+    note: "Course lead for clinical apps, quality management, user-centered design and studying with genAI." },
+  // Home's own short labels and notes; About keeps the full project entries.
+  ...[
+    { name: "AMRAP", kind: "iOS app" },
+    { name: "Gluscht", kind: "iOS and web app" },
+    { name: "Facilitation", kind: "Launching soon",
+      note: "My own company for facilitation and digital experience engineering. Write to me to hear when it opens." },
+  ].map(({ name, kind, note }) => {
+    const p = project(name);
+    return p && { kind, title: p.name, href: p.links[0]?.href, note: note ?? p.note };
+  }).filter((b): b is NonNullable<typeof b> => Boolean(b)),
+];
+const email = site.links.find((l) => l.label === "Email")?.href.replace("mailto:", "");
+const academic = site.links.filter((l) => ["ORCID", "Scholar", "LinkedIn"].includes(l.label));
 const cards = [
   latest && { label: "Newest", post: latest },
   featured && { label: "Featured", post: featured },
@@ -21,12 +39,12 @@ const cards = [
 <Base jsonLd={website}>
   <section class="intro-grid">
     <div class="intro reveal">
-      <div class="eyebrow role">{site.role} · {site.location}</div>
+      <div class="eyebrow role">{site.role}, {site.location}</div>
       {site.bio.map((p) => <p set:html={p} />)}
 
       {site.now && (
         <aside class="now">
-          <div class="eyebrow">Now <span style="opacity:.7">· updated {fmtDate(new Date(site.now.updated))}</span></div>
+          <h2>Now <small>updated {fmtDate(new Date(site.now.updated))}</small></h2>
           <ul>{site.now.items.map((i) => <li set:html={i} />)}</ul>
         </aside>
       )}
@@ -35,7 +53,7 @@ const cards = [
   </section>
 
   <section>
-    <div class="section-title"><h2>Research</h2><span class="line"></span><a href="/research/">All publications ({research.totals.publications}) →</a></div>
+    <div class="section-title"><h2>Research</h2><span class="line"></span><a href="/research/">All {research.totals.publications} publications</a></div>
     <div class="research-strip">
       <dl class="stats">
         <div><dt>Citations</dt><dd>{research.totals.citations}</dd></div>
@@ -46,9 +64,24 @@ const cards = [
     </div>
   </section>
 
+  <section>
+    <div class="section-title"><h2>Beyond research</h2><span class="line"></span><a href="/about/">Projects and timeline</a></div>
+    <ul class="timeline beyond">
+      {beyond.map((b) => (
+        <li>
+          <span class="mono">{b.kind}</span>
+          <div>
+            <div class="w">{b.href ? <a href={b.href}>{b.title}</a> : b.title}</div>
+            <div class="note">{b.note}</div>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
   {cards.length > 0 && (
     <section>
-      <div class="section-title"><h2>Writing</h2><span class="line"></span><a href="/blog/">All posts ({posts.length}) →</a></div>
+      <div class="section-title"><h2>Writing</h2><span class="line"></span><a href="/blog/">All {posts.length} posts</a></div>
       <div class="cards">
         {cards.map(({ label, post }) => (
           <a class="card" href={`/blog/${post.id}/`}>
@@ -66,6 +99,14 @@ const cards = [
     <section>
       <div class="section-title"><h2>Recent</h2><span class="line"></span></div>
       <PostList posts={posts.slice(0, 6)} />
+    </section>
+  )}
+
+  {email && (
+    <section class="contact">
+      <div class="section-title"><h2>Get in touch</h2><span class="line"></span></div>
+      <p class="contact-line">Working on clinical NLP, building a health app, or planning a workshop? Write to me at <a href={`mailto:${email}`}>{email}</a>.</p>
+      {academic.length > 0 && <p class="contact-more">Also on {academic.map((l, i) => <>{i > 0 && (i === academic.length - 1 ? " and " : ", ")}<a href={l.href}>{l.label}</a></>)}.</p>}
     </section>
   )}
 </Base>
