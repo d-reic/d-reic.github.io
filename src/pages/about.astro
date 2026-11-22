@@ -19,7 +19,7 @@ import { profilePage } from "../lib/schema";
 
     <div class="about-main">
       <h1>About</h1>
-      <div class="intro">{site.bio.map((p) => <p set:html={p} />)}</div>
+      <div class="intro">{site.aboutBio.map((p) => <p set:html={p} />)}</div>
 
       {[
         { title: "Experience", items: site.experience },

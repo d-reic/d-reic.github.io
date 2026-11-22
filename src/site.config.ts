@@ -21,6 +21,18 @@ export const site = {
      radiology. More broadly, I'm trying to make healthcare more accessible and efficient with AI and NLP.`,
   ],
 
+  // About page intro: the longer story, so it doesn't repeat the home bio. Plain HTML is allowed.
+  aboutBio: [
+    `I'm Daniel. I started in medical informatics in Graz, spent exchange semesters in Bern and
+     Jönköping (hence the Salü! and the Hej!), and have built health software ever since: Android apps
+     at Solgenium, research on clinical NLP and conversational agents at BFH, and a PhD at the
+     Université de Genève on natural language processing in radiology.`,
+    `Today I'm a tenure-track lecturer at <a href="https://www.bfh.ch">Bern University of Applied Sciences</a>,
+     where I teach clinical apps, quality management, user-centered design and the practical use of
+     generative AI. On the side I build apps like AMRAP and Gluscht, play the harp as Der Harfenist, and
+     I'm about to start my own company for facilitation and digital experience engineering.`,
+  ],
+
   // A small "now" box (nownownow.com style). Set to null to hide it.
   now: {
     updated: "2026-10-21",
@@ -108,8 +120,8 @@ export const site = {
       { name: "Quality management in healthcare", subtitle: "Quality frameworks, processes and measurement in healthcare organisations.", role: "Course lead", note: "" },
       { name: "Optimize your studies with genAI", subtitle: "Using generative AI for learning, writing and research, responsibly.", role: "Course lead", note: "" },
       { name: "User-Centered Design", subtitle: "Designing health software with and for the people who use it.", role: "Course lead", note: "" },
-      { name: "ASU Research internship", subtitle: "Guiding students through a research project of their own.", role: "Teaching", note: "" },
-      { name: "Effective prompting and AI interaction", subtitle: "Writing prompts that get reliable results from language models.", role: "Teaching", note: "" },
+      { name: "ASU Research internship", subtitle: "Guiding students through a research project of their own.", role: "Co-teaching", note: "" },
+      { name: "Effective prompting and AI interaction", subtitle: "Writing prompts that get reliable results from language models.", role: "Co-teaching", note: "" },
     ],
   },
   interests: ["Large language models in medicine", "Clinical NLP", "Data science", "Mobile app development"],

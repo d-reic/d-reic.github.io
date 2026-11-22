@@ -1,8 +1,8 @@
 {
-  "fetchedAt": "2026-11-21T17:08:10.034Z",
+  "fetchedAt": "2026-11-22T18:06:59.055Z",
   "orcid": "0000-0002-8052-3359",
   "totals": {
-    "citations": 634,
+    "citations": 637,
     "hIndex": 10,
     "publications": 32
   },
@@ -33,7 +33,7 @@
     },
     {
       "year": 2026,
-      "citations": 353
+      "citations": 356
     }
   ],
   "works": [
@@ -44,7 +44,7 @@
       "venue": "Journal of the American Medical Informatics Association",
       "doi": "10.1093/jamia/ocag136",
       "url": "https://doi.org/10.1093/jamia/ocag136",
-      "citations": 3,
+      "citations": 4,
       "authors": [
         "Daniel Reichenpfader",
         "Jamil Zaghir",
@@ -96,6 +96,21 @@
       "me": 0
     },
     {
+      "title": "Design and Evaluation of an Open-Source, Locally Deployed Chatbot System for Higher Education",
+      "year": 2026,
+      "type": "book-chapter",
+      "venue": "Lecture notes in computer science",
+      "doi": "10.1007/978-3-032-03873-9_50",
+      "url": "https://doi.org/10.1007/978-3-032-03873-9_50",
+      "citations": 1,
+      "authors": [
+        "Daniel Reichenpfader",
+        "Denis Moser",
+        "Kerstin Denecke"
+      ],
+      "me": 0
+    },
+    {
       "title": "Semantic retrieval-augmented translation for radiology reports using small language models: Algorithm development and evaluation",
       "year": 2026,
       "type": "journal-article",
@@ -116,21 +131,6 @@
       "citations": 0,
       "authors": [
         "Daniel Reichenpfader",
-        "Kerstin Denecke"
-      ],
-      "me": 0
-    },
-    {
-      "title": "Design and Evaluation of an Open-Source, Locally Deployed Chatbot System for Higher Education",
-      "year": 2026,
-      "type": "book-chapter",
-      "venue": "Lecture notes in computer science",
-      "doi": "10.1007/978-3-032-03873-9_50",
-      "url": "https://doi.org/10.1007/978-3-032-03873-9_50",
-      "citations": 0,
-      "authors": [
-        "Daniel Reichenpfader",
-        "Denis Moser",
         "Kerstin Denecke"
       ],
       "me": 0
@@ -406,7 +406,7 @@
       "venue": "Trends in Higher Education",
       "doi": "10.3390/higheredu2040039",
       "url": "https://doi.org/10.3390/higheredu2040039",
-      "citations": 88,
+      "citations": 89,
       "authors": [
         "Kerstin Denecke",
         "Robin Glauser",
