@@ -102,6 +102,8 @@ export const site = {
   projects: [
     { name: "AMRAP: WOD Logs & PRs", note: "Native iOS app for box fitness athletes.", links: [{ label: "Website", href: "https://amrap-app.com" }, { label: "App Store", href: "https://apps.apple.com/ch/app/amrap-wod-log-prs/id6743651394" }] },
     { name: "Gluscht", note: "Nutrition coaching app for iPhone and the web. Turns your coach's meal plan into a daily schedule. In pilot.", links: [{ label: "Website", href: "https://danielreichenpfader.com/gluscht/" }] },
+    { name: "Tandemy", note: "iOS app for tandem language learning: a split-session timer that switches languages halfway, a shared notebook for words and corrections, and flashcards between sessions. In development.", links: [] },
+    { name: "How Many Tokens?", note: "Turns an LLM token count into things you know: copies of famous books, a stack of printed paper next to landmarks, and hours of reading. Type a number, everything recomputes.", links: [{ label: "Try it", href: "https://danielreichenpfader.com/token-visualizer/" }] },
     { name: "Solution", note: "Browser game about a machine-press operator in a German factory, 1941. The score rewards working fast and asking nothing. Inspired by Gabrielle Zevin's Tomorrow, and Tomorrow, and Tomorrow. In German.", links: [{ label: "Play", href: "https://danielreichenpfader.com/solution/" }] },
     { name: "Der Harfenist", note: "Harp music for your event.", links: [{ label: "Website", href: "https://der-harfenist.ch" }] },
     { name: "Facilitation & Digital Experience Engineering", note: "About to start my own company. Stay tuned!", links: [] },
