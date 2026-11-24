@@ -1,8 +1,8 @@
 {
-  "fetchedAt": "2026-11-22T18:06:59.055Z",
+  "fetchedAt": "2026-11-24T14:33:20.479Z",
   "orcid": "0000-0002-8052-3359",
   "totals": {
-    "citations": 637,
+    "citations": 638,
     "hIndex": 10,
     "publications": 32
   },
@@ -29,7 +29,7 @@
     },
     {
       "year": 2025,
-      "citations": 184
+      "citations": 185
     },
     {
       "year": 2026,
@@ -406,7 +406,7 @@
       "venue": "Trends in Higher Education",
       "doi": "10.3390/higheredu2040039",
       "url": "https://doi.org/10.3390/higheredu2040039",
-      "citations": 89,
+      "citations": 90,
       "authors": [
         "Kerstin Denecke",
         "Robin Glauser",
