@@ -1,5 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
+import HairlineFigure from "../components/HairlineFigure.astro";
+import { site } from "../site.config";
 
 // Prompts and AI tools worth trying.
 // Only links and own short descriptions; the prompt texts stay with their authors.
@@ -96,13 +98,6 @@ const tools: Item[] = [
     level: "Intermediate",
   },
   {
-    title: "SkillSpector",
-    text: "A security scanner for agent skills. The README summarises a study that found vulnerabilities in about a quarter of the skills examined. A good checklist before you install someone else's skills.",
-    href: "https://github.com/nvidia/skillspector",
-    source: "NVIDIA on GitHub",
-    level: "Advanced",
-  },
-  {
     title: "LLM Wiki",
     text: "An idea file: a language model builds a growing, linked wiki from your sources instead of searching again for every question.",
     href: "https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f",
@@ -119,14 +114,32 @@ const groups = [
 ];
 ---
 <Base
-  title="Prompts and AI tools"
-  description="A selection of prompts and AI tools worth trying."
-  noindex
+  title="Resources"
+  description="My own projects and websites, plus a selection of prompts and AI tools worth trying."
 >
   <section class="page-head">
     <div class="reveal">
-      <h1>Prompts and AI tools</h1>
-      <p>A selection worth trying. Test them and judge for yourself: useful or hype? Many prompt formulas from social media are good briefing principles in new packaging, so check the source too.</p>
+      <h1>Resources</h1>
+      <p>Things I built, then a selection of prompts and AI tools worth trying. Test those and judge for yourself: useful or hype? Many prompt formulas from social media are good briefing principles in new packaging, so check the source too.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Projects and websites</h2><span class="line"></span></div>
+    <ul class="timeline">
+      {site.projects.map((p) => (
+        <li>
+          <span class="mono links">{p.links.map((l) => <a href={l.href}>{l.label}</a>)}</span>
+          <div>
+            <div class="w">{p.name}</div>
+            <div class="note">{p.note}</div>
+          </div>
+        </li>
+      ))}
+    </ul>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 28px">
+      <HairlineFigure name="barbell" n={1} caption="AMRAP, loaded." play label="A loaded barbell; the pointer's height sets the load and plates slide on and off" />
+      <HairlineFigure name="harp" n={2} caption="Der Harfenist." play label="A concert harp; the strings under the pointer are plucked and ring" />
     </div>
   </section>
 

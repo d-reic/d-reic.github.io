@@ -10,7 +10,7 @@ const hasPosts = readdirSync("src/content/blog").some((f) => f.endsWith(".md"));
 // For a GitHub Pages project site (user.github.io/repo) also set `base: "/repo"`.
 export default defineConfig({
   site: "https://danielreichenpfader.com",
-  integrations: [sitemap({ filter: (page) => (hasPosts || !page.endsWith("/blog/")) && !page.endsWith("/resources/") })],
+  integrations: [sitemap({ filter: (page) => (hasPosts || !page.endsWith("/blog/")) })],
   // Old URL of the resource page, already shared.
   redirects: { "/teaching/cas-ki-ressourcen/": "/resources/" },
   markdown: {

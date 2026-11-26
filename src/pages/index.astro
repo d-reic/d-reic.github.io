@@ -17,7 +17,7 @@ const project = (name: string) => site.projects.find((p) => p.name.startsWith(na
 const beyond = [
   { kind: "Teaching", title: "Courses at BFH", href: "/teaching/",
     note: "Course lead for clinical apps, quality management, user-centered design and studying with genAI." },
-  // Home's own short labels and notes; About keeps the full project entries.
+  // Home's own short labels and notes; Resources keeps the full project entries.
   ...[
     { name: "AMRAP", kind: "iOS app" },
     { name: "Gluscht", kind: "iOS and web app" },
@@ -65,7 +65,7 @@ const cards = [
   </section>
 
   <section>
-    <div class="section-title"><h2>Beyond research</h2><span class="line"></span><a href="/about/">Projects and timeline</a></div>
+    <div class="section-title"><h2>Beyond research</h2><span class="line"></span><a href="/resources/">All projects</a></div>
     <ul class="timeline beyond">
       {beyond.map((b) => (
         <li>

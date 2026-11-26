@@ -105,6 +105,7 @@ export const site = {
     { name: "Tandemy", note: "iOS app for tandem language learning: a split-session timer that switches languages halfway, a shared notebook for words and corrections, and flashcards between sessions. In development.", links: [] },
     { name: "How Many Tokens?", note: "Turns an LLM token count into things you know: copies of famous books, a stack of printed paper next to landmarks, and hours of reading. Type a number, everything recomputes.", links: [{ label: "Try it", href: "https://danielreichenpfader.com/token-visualizer/" }] },
     { name: "Solution", note: "Browser game about a machine-press operator in a German factory, 1941. The score rewards working fast and asking nothing. Inspired by Gabrielle Zevin's Tomorrow, and Tomorrow, and Tomorrow. In German.", links: [{ label: "Play", href: "https://danielreichenpfader.com/solution/" }] },
+    { name: "SkillSpector Web", note: "Checks AI agent skills for prompt injection, data exfiltration and malicious code before you install them. Paste a link, upload or paste a SKILL.md and get a verdict, a risk score and the findings. Built on NVIDIA SkillSpector.", links: [{ label: "Try it", href: "https://skill-scanner.fly.dev" }] },
     { name: "Der Harfenist", note: "Harp music for your event.", links: [{ label: "Website", href: "https://der-harfenist.ch" }] },
     { name: "Facilitation & Digital Experience Engineering", note: "About to start my own company. Stay tuned!", links: [] },
   ],
